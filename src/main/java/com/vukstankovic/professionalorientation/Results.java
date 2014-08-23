@@ -90,6 +90,7 @@ public class Results {
 		} catch (URISyntaxException e) {
 			e.printStackTrace();
 		}
+		rs = -1;
         return Response.seeOther(targetURIForRedirection).build();
 	}
 	

@@ -4,7 +4,7 @@
   <groupId>ProfessionalOrientationMVN</groupId>
   <artifactId>ProfessionalOrientationMVN</artifactId>
   <packaging>war</packaging>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>1.0</version>
   <name>ProfessionalOrientationMVN Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
@@ -17,5 +17,16 @@
   </dependencies>
   <build>
     <finalName>ProfessionalOrientationMVN</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.1</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+    </plugins>
   </build>
 </project>

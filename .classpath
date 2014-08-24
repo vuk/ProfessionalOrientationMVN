@@ -32,7 +32,6 @@
 	<classpathentry kind="lib" path="/home/vuk/workspace/ProfessionalOrientationMVN/lib/persistence-api-1.0.jar"/>
 	<classpathentry kind="lib" path="/home/vuk/workspace/ProfessionalOrientationMVN/lib/osgi-resource-locator-1.0.1.jar"/>
 	<classpathentry kind="lib" path="/home/vuk/workspace/ProfessionalOrientationMVN/lib/org.osgi.core-4.2.0.jar"/>
-	<classpathentry kind="lib" path="/home/vuk/workspace/ProfessionalOrientationMVN/lib/mysql-connector-java-5.1.31-bin.jar"/>
 	<classpathentry kind="lib" path="/home/vuk/workspace/ProfessionalOrientationMVN/lib/jersey-server.jar"/>
 	<classpathentry kind="lib" path="/home/vuk/workspace/ProfessionalOrientationMVN/lib/jersey-guava-2.11.jar"/>
 	<classpathentry kind="lib" path="/home/vuk/workspace/ProfessionalOrientationMVN/lib/jersey-container-servlet.jar"/>
@@ -53,5 +52,6 @@
 	<classpathentry kind="lib" path="/home/vuk/workspace/ProfessionalOrientationMVN/lib/gson-1.0.jar"/>
 	<classpathentry kind="lib" path="/home/vuk/workspace/ProfessionalOrientationMVN/lib/asm-debug-all-5.0.2.jar"/>
 	<classpathentry kind="lib" path="/home/vuk/workspace/ProfessionalOrientationMVN/lib/aopalliance-repackaged-2.3.0-b05.jar"/>
+	<classpathentry kind="lib" path="/home/vuk/workspace/ProfessionalOrientationMVN/lib/mysql-connector-java-5.1.31-bin.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

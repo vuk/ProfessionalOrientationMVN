@@ -7,6 +7,14 @@
 	<version>1.0</version>
 	<name>ProfessionalOrientationMVN Maven Webapp</name>
 	<url>http://maven.apache.org</url>
+	<repositories>
+		<repository>
+			<id>project_lib</id>
+			<name>Repository in project's lib dir</name>
+			<layout>default</layout>
+			<url>file:///${project.basedir}/lib</url>
+		</repository>
+	</repositories>
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>

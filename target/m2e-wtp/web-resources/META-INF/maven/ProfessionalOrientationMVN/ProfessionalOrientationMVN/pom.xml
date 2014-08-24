@@ -10,7 +10,7 @@
 	<repositories>
 		<repository>
 			<id>local-libs</id>
-			<url>${basedir}/src/main/webapp/WEB-INF/lib</url>
+			<url>${basedir}/lib</url>
 		</repository>
 	</repositories>
 	<dependencies>
@@ -45,11 +45,17 @@
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-bundle</artifactId>
+			<version>1.18.1</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
 			<groupId>net.sourceforge.jFuzzyLogic</groupId>
 			<artifactId>jFuzzyLogic</artifactId>
 			<scope>system</scope>
 			<version>2.0</version>
-			<systemPath>${basedir}/src/main/webapp/WEB-INF/lib/jFuzzyLogic.jar</systemPath>
+			<systemPath>${basedir}/lib/jFuzzyLogic.jar</systemPath>
 		</dependency>
 	</dependencies>
 	<build>

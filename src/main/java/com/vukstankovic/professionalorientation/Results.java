@@ -101,8 +101,6 @@ public class Results {
 	public Response calculation(MultivaluedMap<String, String> formData) {
 		Connection con = null;
         Statement st = null;
-        int rs = -9;
-        
         String url = "jdbc:mysql://localhost:3306/professional_orientation?useUnicode=yes&characterEncoding=UTF-8";
         String user = "root";
         String password = "root";
@@ -111,13 +109,13 @@ public class Results {
             con = (Connection) DriverManager.getConnection(url, user, password);
             st = (Statement) con.createStatement();
             for(int i = 1; i <= 170; i++){
-            	rs = st.executeUpdate("INSERT INTO question_answers VALUES "
+            	st.executeUpdate("INSERT INTO question_answers VALUES "
                 		+ "(NULL, '"+formData.getFirst("id")+"', '"
                 				   +i+"', '"
                 				   +formData.getFirst(Integer.toString(i))+"')", Statement.RETURN_GENERATED_KEYS);
                 ResultSet newID = st.getGeneratedKeys();
                 newID.next();
-                rs = newID.getInt(1);
+                newID.getInt(1);
             }
             FIS fis = FIS.load(ctx.getRealPath("rules/rules.fcl"));
     		
@@ -163,7 +161,7 @@ public class Results {
     		double kultura = fis.getVariable("okultura").defuzzify();
     		double zdravstvo = fis.getVariable("ozdravstvo").defuzzify();
     		double licneusluge = fis.getVariable("olicneusluge").defuzzify();
-    		rs = st.executeUpdate("UPDATE users SET poljoprivreda ='"+poljoprivreda+"', "
+    		st.executeUpdate("UPDATE users SET poljoprivreda ='"+poljoprivreda+"', "
     				+ "sumarstvo = '"+sumarstvo+"', "
     				+ "geodezija = '"+geodezija+"', "
     				+ "masinstvo = '"+masinstvo+"',"

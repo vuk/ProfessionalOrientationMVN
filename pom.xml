@@ -9,10 +9,8 @@
 	<url>http://maven.apache.org</url>
 	<repositories>
 		<repository>
-			<id>project_lib</id>
-			<name>Repository in project's lib dir</name>
-			<layout>default</layout>
-			<url>file:///${project.basedir}/lib</url>
+			<id>local-libs</id>
+			<url>${basedir}/src/main/webapp/WEB-INF/lib</url>
 		</repository>
 	</repositories>
 	<dependencies>
@@ -45,6 +43,13 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.32</version>
 			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>net.sourceforge.jFuzzyLogic</groupId>
+			<artifactId>jFuzzyLogic</artifactId>
+			<scope>system</scope>
+			<version>2.0</version>
+			<systemPath>${basedir}/src/main/webapp/WEB-INF/lib/jFuzzyLogic.jar</systemPath>
 		</dependency>
 	</dependencies>
 	<build>

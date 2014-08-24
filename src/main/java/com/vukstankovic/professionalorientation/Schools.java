@@ -16,7 +16,6 @@ import com.vukstankovic.professionalorientation.classes.SchoolType;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import com.mysql.jdbc.Driver;
 
 @Path("schools")
 public class Schools {

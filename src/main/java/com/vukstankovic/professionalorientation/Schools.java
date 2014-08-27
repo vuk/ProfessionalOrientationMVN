@@ -12,6 +12,7 @@ import com.google.gson.Gson;
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.Statement;
 import com.vukstankovic.professionalorientation.classes.SchoolType;
+import com.vukstankovic.professionalorientation.config.DBConnect;
 
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -34,13 +35,11 @@ public class Schools {
         Statement st = null;
         ResultSet rs = null;
         
-        String url = "jdbc:mysql://localhost:3306/professional_orientation";
-        String user = "root";
-        String password = "root";
+        DBConnect db = new DBConnect();
 
         try {
         	Class.forName("com.mysql.jdbc.Driver");
-            con = (Connection) DriverManager.getConnection(url, user, password);
+            con = (Connection) DriverManager.getConnection(db.getUrl(), db.getUser(), db.getPassword());
             st = (Statement) con.createStatement();
             rs = st.executeQuery("SELECT * FROM school_types ORDER BY title asc");
 

@@ -22,6 +22,7 @@ import javax.ws.rs.core.Response;
 
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.Statement;
+import com.vukstankovic.professionalorientation.config.DBConnect;
 
 
 @Path("/request")
@@ -34,13 +35,11 @@ public class Results {
 		Connection con = null;
         Statement st = null;
         int rs = -9;
+        DBConnect db = new DBConnect();
         
-        String url = "jdbc:mysql://localhost:3306/professional_orientation?useUnicode=yes&characterEncoding=UTF-8";
-        String user = "root";
-        String password = "root";
         try {
         	Class.forName("com.mysql.jdbc.Driver");
-            con = (Connection) DriverManager.getConnection(url, user, password);
+        	con = (Connection) DriverManager.getConnection(db.getUrl(), db.getUser(), db.getPassword());
             st = (Statement) con.createStatement();
             rs = st.executeUpdate("INSERT INTO users VALUES "
             		+ "(NULL, '"+formData.getFirst("first_name")+"', '"

@@ -180,7 +180,7 @@ public class Results {
     				+ "WHERE id = '"+formData.getFirst("id")+"'");
             URI targetURIForRedirection;
 			targetURIForRedirection = new URI(
-					"http://localhost:8000/finish?pol="+poljoprivreda+"&sum="+sumarstvo+"&geo="+geodezija
+					"http://po.puskice.org/finish?pol="+poljoprivreda+"&sum="+sumarstvo+"&geo="+geodezija
 					+"&mas="+masinstvo+"&eth="+elektrotehnika+"&hem="+hemija+"&tek="+tekstil
 					+"&sao="+saobracaj+"&tru="+trgovinaugostiteljstvo+"&ekp="+ekonomijapravo
 					+"&hid="+hidmet+"&kul="+kultura+"&zdr="+zdravstvo+"&usl="+licneusluge);

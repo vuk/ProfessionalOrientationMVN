@@ -1,7 +1,7 @@
 package com.vukstankovic.professionalorientation.config;
 
 public class DBConnect {
-	String url = "jdbc:mysql://82.192.92.55/vukstank_professional";
+	String url = "jdbc:mysql://82.192.92.55/vukstank_professional?useUnicode=yes&characterEncoding=UTF-8";
     String user = "vukstank_vukad";
     String password = "partizan89";
     

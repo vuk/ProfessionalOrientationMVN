@@ -57,7 +57,7 @@ public class Results {
             newID.next();
             rs = newID.getInt(1);
             URI targetURIForRedirection;
-			targetURIForRedirection = new URI("http://localhost:8000/personality-questions?id="+rs);
+			targetURIForRedirection = new URI("http://po.puskice.org/personality-questions?id="+rs);
 			
             return Response.seeOther(targetURIForRedirection).build();
 
@@ -94,21 +94,20 @@ public class Results {
         return Response.seeOther(targetURIForRedirection).build();
 	}
 	
-	
+	@Context ServletContext ctx2;
 	@Path("/calculate")
 	@POST
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED + "; charset=UTF-8")
 	public Response calculation(MultivaluedMap<String, String> formData) {
 		Connection con = null;
         Statement st = null;
-        String url = "jdbc:mysql://localhost:3306/professional_orientation?useUnicode=yes&characterEncoding=UTF-8";
-        String user = "root";
-        String password = "root";
+        DBConnect db = new DBConnect();
         try {
         	Class.forName("com.mysql.jdbc.Driver");
-            con = (Connection) DriverManager.getConnection(url, user, password);
+        	con = (Connection) DriverManager.getConnection(db.getUrl(), db.getUser(), db.getPassword());
             st = (Statement) con.createStatement();
-            for(int i = 1; i <= 170; i++){
+            // Code commented out so it won't insert users answers for each question
+/*            for(int i = 1; i <= 170; i++){
             	st.executeUpdate("INSERT INTO question_answers VALUES "
                 		+ "(NULL, '"+formData.getFirst("id")+"', '"
                 				   +i+"', '"
@@ -116,8 +115,8 @@ public class Results {
                 ResultSet newID = st.getGeneratedKeys();
                 newID.next();
                 newID.getInt(1);
-            }
-            FIS fis = FIS.load(ctx.getRealPath("rules/rules.fcl"));
+            }*/
+            FIS fis = FIS.load(ctx2.getRealPath("/WEB-INF/rules/rules.fcl"));
     		
     		if (fis == null){
     			System.err.println("Greska");

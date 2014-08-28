@@ -3,6 +3,7 @@ package com.vukstankovic.professionalorientation;
 import net.sourceforge.jFuzzyLogic.*;
 import net.sourceforge.jFuzzyLogic.rule.Rule;
 
+import java.io.InputStream;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.sql.DriverManager;
@@ -116,7 +117,9 @@ public class Results {
                 newID.next();
                 newID.getInt(1);
             }*/
-            FIS fis = FIS.load(ctx2.getRealPath("/WEB-INF/rules/rules.fcl"));
+            boolean verbose = true;
+            InputStream inputStream = ctx.getResourceAsStream("/WEB-INF/rules/rules.fcl");
+            FIS fis = FIS.load(inputStream, verbose);
     		
     		if (fis == null){
     			System.err.println("Greska");

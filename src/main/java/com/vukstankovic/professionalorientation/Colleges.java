@@ -91,7 +91,7 @@ public class Colleges {
             String third = sorted_interests.firstKey();
             sorted_interests.remove(third);
             
-            System.out.println(first + " " + second + " " +third);
+            System.out.println(first + " " + second + " " +third + "Test 3");
             
             rs.close();
             rs = st.executeQuery("SELECT * FROM colleges WHERE interest LIKE '%"+first+",%'"
@@ -113,8 +113,8 @@ public class Colleges {
             rs.close();
             rs = st.executeQuery("SELECT * FROM colleges WHERE (interest LIKE '%"+first+",%'"
             		+ " AND interest LIKE '%"+second+",%') "
-            				+ "OR (interest LIKE '%"+first+",%' AND interest LIKE '%"+third+",%')"
-            						+ "OR (interest LIKE '%"+second+",%' AND interest LIKE '%"+third+",%')");
+            				+ " OR (interest LIKE '%"+first+",%' AND interest LIKE '%"+third+",%')"
+            						+ " OR (interest LIKE '%"+second+",%' AND interest LIKE '%"+third+",%')");
             while (rs.next()) {
             	College c = new College();
             	c.setId(rs.getInt(1));
@@ -131,9 +131,9 @@ public class Colleges {
             }
 
             rs.close();
-            rs = st.executeQuery("SELECT * FROM colleges WHERE (interest LIKE %'"+first+",'%"
-            				+ "OR (interest LIKE %'"+third+",'%)"
-            						+ "OR (interest LIKE %'"+second+",'%");
+            rs = st.executeQuery("SELECT * FROM colleges WHERE (interest LIKE '%"+first+",%'"
+            				+ " OR (interest LIKE '%"+third+",%')"
+            						+ " OR (interest LIKE '%"+second+",%'");
             while (rs.next()) {
             	College c = new College();
             	c.setId(rs.getInt(1));

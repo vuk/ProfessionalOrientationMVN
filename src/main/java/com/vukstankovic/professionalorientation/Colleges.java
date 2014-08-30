@@ -131,9 +131,9 @@ public class Colleges {
             }
 
             rs.close();
-            rs = st.executeQuery("SELECT * FROM colleges WHERE (interest LIKE '%"+first+",%'"
-            				+ " OR (interest LIKE '%"+third+",%')"
-            						+ " OR (interest LIKE '%"+second+",%'");
+            rs = st.executeQuery("SELECT * FROM colleges WHERE interest LIKE '%"+first+",%'"
+            				+ " OR interest LIKE '%"+third+",%'"
+            						+ " OR interest LIKE '%"+second+",%'");
             while (rs.next()) {
             	College c = new College();
             	c.setId(rs.getInt(1));

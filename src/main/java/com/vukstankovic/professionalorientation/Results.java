@@ -108,6 +108,7 @@ public class Results {
         	con = (Connection) DriverManager.getConnection(db.getUrl(), db.getUser(), db.getPassword());
             st = (Statement) con.createStatement();
             // Code commented out so it won't insert users answers for each question
+            //st.executeUpdate("DELETE FROM question_answers WHERE user_id = "+formData.getFirst("id"));
 /*            for(int i = 1; i <= 170; i++){
             	st.executeUpdate("INSERT INTO question_answers VALUES "
                 		+ "(NULL, '"+formData.getFirst("id")+"', '"

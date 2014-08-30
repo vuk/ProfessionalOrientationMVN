@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map.Entry;
+import java.util.NavigableMap;
 import java.util.SortedMap;
 import java.util.TreeMap;
 import java.util.logging.Level;
@@ -76,7 +77,7 @@ public class Colleges {
             double usluge = rs.getDouble(23);
             interests.put(14, usluge);
             
-            SortedMap<String,Double> sorted_interests = new TreeMap<String,Double>(bvc);
+            NavigableMap<String,Double> sorted_interests = new TreeMap<String,Double>(bvc);
             int first = Integer.parseInt(sorted_interests.lastKey());
             sorted_interests.remove(first);
             int second = Integer.parseInt(sorted_interests.lastKey());

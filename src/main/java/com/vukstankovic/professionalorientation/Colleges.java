@@ -79,6 +79,7 @@ public class Colleges {
             ValueComparator bvc =  new ValueComparator(interests);
             NavigableMap<String,Double> sorted_interests = new TreeMap<String,Double>(bvc);
             System.out.println(sorted_interests.toString()+ "Test");
+            System.out.println(interests.toString()+ "Test2");
             int first = Integer.parseInt(sorted_interests.lastKey());
             sorted_interests.remove(first);
             int second = Integer.parseInt(sorted_interests.lastKey());

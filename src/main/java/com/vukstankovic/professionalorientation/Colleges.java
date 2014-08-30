@@ -29,7 +29,7 @@ import com.vukstankovic.professionalorientation.config.DBConnect;
 public class Colleges {
 	public String response = "Nothing to respond";
 	public ArrayList<College> colleges = new ArrayList<College>();
-	HashMap<Integer,Double> interests = new HashMap<Integer,Double>();
+	HashMap<String,Double> interests = new HashMap<String,Double>();
 	
 	@GET
     @Produces(MediaType.APPLICATION_JSON + "; charset=UTF-8")
@@ -48,43 +48,45 @@ public class Colleges {
             rs.next();
             
             double poljoprivreda = rs.getDouble(10);
-            interests.put(1, poljoprivreda);
+            interests.put("1", poljoprivreda);
             double sumarstvo = rs.getDouble(11);
-            interests.put(2, sumarstvo);
+            interests.put("2", sumarstvo);
             double geodezija = rs.getDouble(12);
-            interests.put(3, geodezija);
+            interests.put("3", geodezija);
             double masinstvo = rs.getDouble(13);
-            interests.put(4, masinstvo);
+            interests.put("4", masinstvo);
             double elektrotehnika = rs.getDouble(14);
-            interests.put(5, elektrotehnika);
+            interests.put("5", elektrotehnika);
             double hemija = rs.getDouble(15);
-            interests.put(6, hemija);
+            interests.put("6", hemija);
             double tekstil = rs.getDouble(16);
-            interests.put(7, tekstil);
+            interests.put("7", tekstil);
             double saobracaj = rs.getDouble(17);
-            interests.put(8, saobracaj);
+            interests.put("8", saobracaj);
             double trgovinaugostiteljstvo = rs.getDouble(18);
-            interests.put(9, trgovinaugostiteljstvo);
+            interests.put("9", trgovinaugostiteljstvo);
             double ekonomijapravo = rs.getDouble(19);
-            interests.put(10, ekonomijapravo);
+            interests.put("10", ekonomijapravo);
             double hidrometeorologija = rs.getDouble(20);
-            interests.put(11, hidrometeorologija);
+            interests.put("11", hidrometeorologija);
             double kultura = rs.getDouble(21);
-            interests.put(12, kultura);
+            interests.put("12", kultura);
             double zdravstvo = rs.getDouble(22);
-            interests.put(13, zdravstvo);
+            interests.put("13", zdravstvo);
             double usluge = rs.getDouble(23);
-            interests.put(14, usluge);
+            interests.put("14", usluge);
             
             ValueComparator bvc =  new ValueComparator(interests);
             NavigableMap<String,Double> sorted_interests = new TreeMap<String,Double>(bvc);
-            System.out.println(sorted_interests.toString()+ "Test");
+            
             System.out.println(interests.toString()+ "Test2");
-            int first = Integer.parseInt(sorted_interests.lastKey());
+            System.out.println(sorted_interests.toString()+ "Test");
+            
+            String first = sorted_interests.lastKey();
             sorted_interests.remove(first);
-            int second = Integer.parseInt(sorted_interests.lastKey());
+            String second = sorted_interests.lastKey();
             sorted_interests.remove(second);
-            int third = Integer.parseInt(sorted_interests.lastKey());
+            String third = sorted_interests.lastKey();
             sorted_interests.remove(third);
             
             rs.close();

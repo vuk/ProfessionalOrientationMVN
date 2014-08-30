@@ -84,17 +84,19 @@ public class Colleges {
             System.out.println(interests.toString()+ "Test2");
             System.out.println(sorted_interests.toString()+ "Test");
             
-            String first = sorted_interests.lastKey();
+            String first = sorted_interests.firstKey();
             sorted_interests.remove(first);
-            String second = sorted_interests.lastKey();
+            String second = sorted_interests.firstKey();
             sorted_interests.remove(second);
-            String third = sorted_interests.lastKey();
+            String third = sorted_interests.firstKey();
             sorted_interests.remove(third);
             
+            System.out.println(first + " " + second + " " +third);
+            
             rs.close();
-            rs = st.executeQuery("SELECT * FROM colleges WHERE interest LIKE %'"+first+",'%"
-            		+ " AND interest LIKE %'"+second+",'%"
-            				+ " AND interest LIKE %'"+third+",'%");
+            rs = st.executeQuery("SELECT * FROM colleges WHERE interest LIKE '%"+first+",%'"
+            		+ " AND interest LIKE '%"+second+",%'"
+            				+ " AND interest LIKE '%"+third+",%'");
             while (rs.next()) {
             	College c = new College();
             	c.setId(rs.getInt(1));
@@ -109,10 +111,10 @@ public class Colleges {
             }
             
             rs.close();
-            rs = st.executeQuery("SELECT * FROM colleges WHERE (interest LIKE %'"+first+",'%"
-            		+ " AND interest LIKE %'"+second+",'%) "
-            				+ "OR (interest LIKE %'"+first+",'% AND interest LIKE %'"+third+",'%)"
-            						+ "OR (interest LIKE %'"+second+",'% AND interest LIKE %'"+third+",'%)");
+            rs = st.executeQuery("SELECT * FROM colleges WHERE (interest LIKE '%"+first+",%'"
+            		+ " AND interest LIKE '%"+second+",%') "
+            				+ "OR (interest LIKE '%"+first+",%' AND interest LIKE '%"+third+",%')"
+            						+ "OR (interest LIKE '%"+second+",%' AND interest LIKE '%"+third+",%')");
             while (rs.next()) {
             	College c = new College();
             	c.setId(rs.getInt(1));

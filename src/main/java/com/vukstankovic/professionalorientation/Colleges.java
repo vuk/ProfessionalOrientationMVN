@@ -79,6 +79,8 @@ public class Colleges {
             ValueComparator bvc =  new ValueComparator(interests);
             NavigableMap<String,Double> sorted_interests = new TreeMap<String,Double>(bvc);
             
+            sorted_interests.putAll(interests);
+            
             System.out.println(interests.toString()+ "Test2");
             System.out.println(sorted_interests.toString()+ "Test");
             

@@ -35,6 +35,7 @@ public class Colleges {
 	@GET
     @Produces(MediaType.APPLICATION_JSON + "; charset=UTF-8")
     public String getIt(@QueryParam("id") String id) {
+		System.out.println(id + "Test 0");
     	Connection con = null;
         Statement st = null;
         ResultSet rs = null;

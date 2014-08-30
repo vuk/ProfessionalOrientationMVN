@@ -30,7 +30,6 @@ public class Colleges {
 	public String response = "Nothing to respond";
 	public ArrayList<College> colleges = new ArrayList<College>();
 	HashMap<Integer,Double> interests = new HashMap<Integer,Double>();
-	ValueComparator bvc =  new ValueComparator(interests);
 	
 	@GET
     @Produces(MediaType.APPLICATION_JSON + "; charset=UTF-8")
@@ -77,6 +76,7 @@ public class Colleges {
             double usluge = rs.getDouble(23);
             interests.put(14, usluge);
             
+            ValueComparator bvc =  new ValueComparator(interests);
             NavigableMap<String,Double> sorted_interests = new TreeMap<String,Double>(bvc);
             int first = Integer.parseInt(sorted_interests.lastKey());
             sorted_interests.remove(first);

@@ -5,6 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map.Entry;
 import java.util.NavigableMap;
 import java.util.SortedMap;
@@ -83,14 +84,18 @@ public class Colleges {
             
             System.out.println(interests.toString()+ "Test2");
             System.out.println(sorted_interests.toString()+ "Test");
-            
-            String first = sorted_interests.firstKey();
-            sorted_interests.remove(first);
-            String second = sorted_interests.firstKey();
-            sorted_interests.remove(second);
-            String third = sorted_interests.firstKey();
-            sorted_interests.remove(third);
-            
+            int i = 1;
+            String first = "";
+            String second = "";
+            String third = "";
+            for(Iterator<Entry<String,Double>>it=sorted_interests.entrySet().iterator();it.hasNext();){
+                Entry<String, Double> entry = it.next();
+                if(i == 1) first = entry.getKey();
+                if(i == 2) second = entry.getKey();
+                if(i == 3) third = entry.getKey();
+                i++;
+            }
+               
             System.out.println(first + " " + second + " " +third + "Test 3");
             
             rs.close();

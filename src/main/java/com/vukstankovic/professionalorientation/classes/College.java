@@ -8,6 +8,7 @@ public class College {
 	private String area;
 	private String description;
 	private String interest;
+	private int ponder;
 	
 	public College(){
 		
@@ -56,5 +57,12 @@ public class College {
 		this.interest = interest;
 	}
 	
+	public int getPonder() {
+		return ponder;
+	}
+	
+	public void setPonder(int ponder){
+		this.ponder = ponder;
+	}
 	
 }

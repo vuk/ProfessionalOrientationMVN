@@ -4,6 +4,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map.Entry;
@@ -22,6 +23,7 @@ import com.google.gson.Gson;
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.Statement;
 import com.vukstankovic.professionalorientation.classes.College;
+import com.vukstankovic.professionalorientation.helpers.CollegeComparator;
 import com.vukstankovic.professionalorientation.helpers.ValueComparator;
 import com.vukstankovic.professionalorientation.config.DBConnect;
 
@@ -156,6 +158,8 @@ public class Colleges {
             	}
             	colleges.add(c);
             }
+            
+            Collections.sort(colleges, new CollegeComparator());
             String json = new Gson().toJson(colleges);
             return json;
 

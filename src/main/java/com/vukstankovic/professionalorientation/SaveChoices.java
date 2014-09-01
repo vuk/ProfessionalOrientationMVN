@@ -45,7 +45,7 @@ public class SaveChoices {
 
 			while (it.hasNext()) {
 				String theKey = (String) it.next();
-				if(theKey.equals("id")) continue;
+				if(theKey.equals("id") || theKey.equals("submit")) continue;
 				st.executeUpdate(
 						"INSERT INTO choices VALUES " + "(NULL, '"
 								+ formData.getFirst("id") + "', '"

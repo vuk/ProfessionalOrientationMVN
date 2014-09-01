@@ -165,6 +165,7 @@ public class Colleges {
             }
             
             Collections.sort(colleges, new CollegeComparator());
+            Collections.reverse(colleges);
             String json = new Gson().toJson(colleges);
             return json;
 

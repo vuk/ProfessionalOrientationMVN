@@ -42,7 +42,7 @@ public class SaveChoices {
 					db.getUser(), db.getPassword());
 			st = (Statement) con.createStatement();
 			Iterator<String> it = formData.keySet().iterator();
-
+			st.executeUpdate("DELETE FROM choices WHERE user_id = " + formData.getFirst("id"));
 			while (it.hasNext()) {
 				String theKey = (String) it.next();
 				if(theKey.equals("id") || theKey.equals("submit")) continue;

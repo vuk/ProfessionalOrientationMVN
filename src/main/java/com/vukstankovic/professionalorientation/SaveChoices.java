@@ -88,7 +88,7 @@ public class SaveChoices {
 		}
 		URI targetURIForRedirection = null;
 		try {
-			targetURIForRedirection = new URI("http://localhost:8000/");
+			targetURIForRedirection = new URI("http://po.puskice.org/");
 		} catch (URISyntaxException e) {
 			e.printStackTrace();
 		}

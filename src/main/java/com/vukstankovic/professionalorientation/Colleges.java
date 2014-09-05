@@ -176,7 +176,6 @@ public class Colleges {
             	top10colleges.add(colleges.get(j));
             }
             Collections.sort(top10colleges, new CollegePriorityComparator());
-            Collections.reverse(top10colleges);
             String json = new Gson().toJson(top10colleges);
             return json;
 

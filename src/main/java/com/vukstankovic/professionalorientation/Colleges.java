@@ -171,7 +171,7 @@ public class Colleges {
             }
             //ArrayList<College> top10colleges = new ArrayList<College>();
             Collections.sort(colleges, new CollegeComparator());
-            //Collections.reverse(colleges);
+            Collections.reverse(colleges);
             /*for(int j = 0; j < 10; j++){
             	top10colleges.add(colleges.get(j));
             }

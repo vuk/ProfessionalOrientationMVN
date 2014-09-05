@@ -24,7 +24,6 @@ import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.Statement;
 import com.vukstankovic.professionalorientation.classes.College;
 import com.vukstankovic.professionalorientation.helpers.CollegeComparator;
-import com.vukstankovic.professionalorientation.helpers.CollegePriorityComparator;
 import com.vukstankovic.professionalorientation.helpers.ValueComparator;
 import com.vukstankovic.professionalorientation.config.DBConnect;
 
@@ -169,14 +168,14 @@ public class Colleges {
             	}
             	colleges.add(c);
             }
-            ArrayList<College> top10colleges = new ArrayList<College>();
+            //ArrayList<College> top10colleges = new ArrayList<College>();
             Collections.sort(colleges, new CollegeComparator());
             Collections.reverse(colleges);
-            for(int j = 0; j < 10; j++){
+            /*for(int j = 0; j < 10; j++){
             	top10colleges.add(colleges.get(j));
             }
-            Collections.sort(top10colleges, new CollegePriorityComparator());
-            String json = new Gson().toJson(top10colleges);
+            Collections.sort(top10colleges, new CollegePriorityComparator());*/
+            String json = new Gson().toJson(colleges);
             return json;
 
         } catch (SQLException ex) {

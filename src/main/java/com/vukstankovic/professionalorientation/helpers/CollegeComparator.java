@@ -7,9 +7,18 @@ import com.vukstankovic.professionalorientation.classes.College;
 public class CollegeComparator implements Comparator<College> {
 	@Override
 	public int compare(College o1, College o2) {
-		Integer ponder1 = o1.getPonder();
-		Integer ponder2 = o2.getPonder();
+		Integer ponder1 = (int) Math.round(o1.getPonder()*this.getMultiplier(o1.getPriority()));
+		Integer ponder2 = (int) Math.round(o2.getPonder()*this.getMultiplier(o2.getPriority()));
 		return ponder1.compareTo(ponder2);
+	}
+	
+	private double getMultiplier(int i){
+		switch(i){
+		case 1 : return 0.5;
+		case 2 : return 0.4;
+		case 3 : return 0.3;
+		default : return 0.0;
+		}
 	}
 
 }

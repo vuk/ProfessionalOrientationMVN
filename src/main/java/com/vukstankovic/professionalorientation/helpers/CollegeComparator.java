@@ -22,9 +22,9 @@ public class CollegeComparator implements Comparator<College> {
 		case 1:
 			return 0.5;
 		case 2: 
-			return 0.45;
+			return 0.49;
 		case 3: 
-			return 0.40;
+			return 0.48;
 		default: 
 			return 0.0;
 		}

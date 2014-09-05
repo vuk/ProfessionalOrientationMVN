@@ -169,13 +169,27 @@ public class Colleges {
             	}
             	colleges.add(c);
             }
-            //ArrayList<College> top10colleges = new ArrayList<College>();
+            ArrayList<College> top15colleges = new ArrayList<College>();
             Collections.sort(colleges, new CollegeComparator());
             Collections.reverse(colleges);
-            /*for(int j = 0; j < 10; j++){
-            	top10colleges.add(colleges.get(j));
+            int firstPick = 0;
+            int secondPick = 0;
+            int thirdPick = 0;
+            for(int j = 0; j < 15; j++){
+            	if(firstPick < 5 && colleges.get(j).getPriority() == 1){
+            		top15colleges.add(colleges.get(j));
+            		firstPick ++;
+            	}
+            	if(secondPick < 5 && colleges.get(j).getPriority() == 2){
+            		top15colleges.add(colleges.get(j));
+            		secondPick ++;
+            	}
+            	if(thirdPick < 5 && colleges.get(j).getPriority() == 3){
+            		top15colleges.add(colleges.get(j));
+            		thirdPick ++;
+            	}
             }
-            Collections.sort(top10colleges, new CollegePriorityComparator());*/
+            //Collections.sort(top10colleges, new CollegePriorityComparator());
             String json = new Gson().toJson(colleges);
             return json;
 

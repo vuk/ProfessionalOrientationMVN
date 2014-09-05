@@ -175,7 +175,7 @@ public class Colleges {
             int firstPick = 0;
             int secondPick = 0;
             int thirdPick = 0;
-            for(int j = 0; j < 15; j++){
+            for(int j = 0; j < 50; j++){
             	if(firstPick < 5 && colleges.get(j).getPriority() == 1){
             		top15colleges.add(colleges.get(j));
             		firstPick ++;

@@ -24,6 +24,7 @@ import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.Statement;
 import com.vukstankovic.professionalorientation.classes.College;
 import com.vukstankovic.professionalorientation.helpers.CollegeComparator;
+import com.vukstankovic.professionalorientation.helpers.CollegePriorityComparator;
 import com.vukstankovic.professionalorientation.helpers.ValueComparator;
 import com.vukstankovic.professionalorientation.config.DBConnect;
 
@@ -104,7 +105,7 @@ public class Colleges {
             /*rs = st.executeQuery("SELECT * FROM colleges WHERE interest LIKE '%"+first+",%'"
             		+ " AND interest LIKE '%"+second+",%'"
             				+ " AND interest LIKE '%"+third+",%'");*/
-            rs = st.executeQuery("SELECT * FROM colleges WHERE interest LIKE '%"+first+",%' ORDER BY ponder DESC");
+            rs = st.executeQuery("SELECT * FROM colleges WHERE interest LIKE '%"+first+",%' ORDER BY ponder DESC LIMIT 5");
             while (rs.next()) {
             	College c = new College();
             	c.setId(rs.getInt(1));
@@ -127,7 +128,7 @@ public class Colleges {
             		+ " AND interest LIKE '%"+second+",%') "
             				+ " OR (interest LIKE '%"+first+",%' AND interest LIKE '%"+third+",%')"
             						+ " OR (interest LIKE '%"+second+",%' AND interest LIKE '%"+third+",%')");*/
-            rs = st.executeQuery("SELECT * FROM colleges WHERE interest LIKE '%"+second+",%' ORDER BY ponder DESC");
+            rs = st.executeQuery("SELECT * FROM colleges WHERE interest LIKE '%"+second+",%' ORDER BY ponder DESC LIMIT 5");
             while (rs.next()) {
             	College c = new College();
             	c.setId(rs.getInt(1));
@@ -150,7 +151,7 @@ public class Colleges {
             /*rs = st.executeQuery("SELECT * FROM colleges WHERE interest LIKE '%"+first+",%'"
             				+ " OR interest LIKE '%"+third+",%'"
             						+ " OR interest LIKE '%"+second+",%'");*/
-            rs = st.executeQuery("SELECT * FROM colleges WHERE interest LIKE '%"+third+",%' ORDER BY ponder DESC");
+            rs = st.executeQuery("SELECT * FROM colleges WHERE interest LIKE '%"+third+",%' ORDER BY ponder DESC LIMIT 5");
             while (rs.next()) {
             	College c = new College();
             	c.setId(rs.getInt(1));
@@ -170,6 +171,7 @@ public class Colleges {
             }
             //ArrayList<College> top10colleges = new ArrayList<College>();
             Collections.sort(colleges, new CollegeComparator());
+            Collections.sort(colleges, new CollegePriorityComparator());
             Collections.reverse(colleges);
             /*for(int j = 0; j < 10; j++){
             	top10colleges.add(colleges.get(j));

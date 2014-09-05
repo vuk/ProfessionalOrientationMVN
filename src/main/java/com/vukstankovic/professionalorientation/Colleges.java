@@ -24,6 +24,7 @@ import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.Statement;
 import com.vukstankovic.professionalorientation.classes.College;
 import com.vukstankovic.professionalorientation.helpers.CollegeComparator;
+import com.vukstankovic.professionalorientation.helpers.CollegePriorityComparator;
 import com.vukstankovic.professionalorientation.helpers.ValueComparator;
 import com.vukstankovic.professionalorientation.config.DBConnect;
 
@@ -115,6 +116,7 @@ public class Colleges {
             	c.setDescription(rs.getString(6));
             	c.setInterest(rs.getString(7));
             	c.setPonder(rs.getInt(8));
+            	c.setPriority(1);
             	if(colleges.contains(c)){
             		continue;
             	}
@@ -137,6 +139,7 @@ public class Colleges {
             	c.setDescription(rs.getString(6));
             	c.setInterest(rs.getString(7));
             	c.setPonder(rs.getInt(8));
+            	c.setPriority(2);
             	
             	if(colleges.contains(c)){
             		continue;
@@ -159,16 +162,22 @@ public class Colleges {
             	c.setDescription(rs.getString(6));
             	c.setInterest(rs.getString(7));
             	c.setPonder(rs.getInt(8));
+            	c.setPriority(3);
             	
             	if(colleges.contains(c)){
             		continue;
             	}
             	colleges.add(c);
             }
-            
+            ArrayList<College> top10colleges = new ArrayList<College>();
             Collections.sort(colleges, new CollegeComparator());
             Collections.reverse(colleges);
-            String json = new Gson().toJson(colleges);
+            for(int j = 0; j < 10; j++){
+            	top10colleges.add(colleges.get(j));
+            }
+            Collections.sort(top10colleges, new CollegePriorityComparator());
+            Collections.reverse(top10colleges);
+            String json = new Gson().toJson(top10colleges);
             return json;
 
         } catch (SQLException ex) {

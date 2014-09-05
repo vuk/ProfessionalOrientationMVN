@@ -9,6 +9,7 @@ public class College {
 	private String description;
 	private String interest;
 	private int ponder;
+	private int priority;
 	
 	public College(){
 		
@@ -63,6 +64,14 @@ public class College {
 	
 	public void setPonder(int ponder){
 		this.ponder = ponder;
+	}
+	
+	public int getPriority() {
+		return priority;
+	}
+	
+	public void setPriority(int priority){
+		this.priority = priority;
 	}
 	
 }

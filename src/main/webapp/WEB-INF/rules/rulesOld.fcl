@@ -283,870 +283,149 @@ RULEBLOCK porules
 	ACT : MIN;
 	ACCU : MAX;
 	
-	// pravila za realisticne osobe
 	RULE 1 : IF realisticni IS visoko AND poljoprivreda IS visoko 
-			THEN opoljoprivreda IS visoko WITH 1.0;
+			THEN opoljoprivreda IS visoko;
 			
 	RULE 2 : IF realisticni IS visoko AND poljoprivreda IS visoko
-			THEN osumarstvo IS visoko WITH 0.75;
+			THEN osumarstvo IS visoko;
 			
 	RULE 3 : IF realisticni IS visoko AND tehnika IS visoko 
-			THEN omasinstvo IS visoko, oelektrotehnika IS visoko WITH 1.0;
-			
-	RULE 4 : IF realisticni IS visoko AND kultura IS visoko 
-			THEN okultura IS visoko WITH 1.0;
-			
-	RULE 5 : IF realisticni IS visoko AND zanati IS visoko 
-			THEN opoljoprivreda IS visoko, ogeodezija IS visoko, omasinstvo IS visoko WITH 1.0;
-			
-	RULE 6 : IF realisticni IS visoko AND zanati IS visoko 
-			THEN osumarstvo IS visoko WITH 0.75;
-			
-	RULE 7 : IF realisticni IS visoko AND administracija IS visoko 
-			THEN oekonomijapravo IS visoko WITH 1.0;
-			
-	RULE 8 : IF realisticni IS visoko AND kreativnost IS visoko 
-			THEN otekstil IS visoko WITH 0.75;
-			
-	RULE 9 : IF realisticni IS visoko AND kreativnost IS visoko 
-			THEN okultura IS visoko WITH 1.0;
-			
-	RULE 10 : IF realisticni IS visoko AND literatura IS visoko 
-			THEN okultura IS visoko WITH 1.0; 
-			
-	RULE 11 : IF realisticni IS visoko AND bezbednost IS visoko 
-			THEN osaobracaj IS srednje, oekonomijapravo IS visoko WITH 1.0;
-			
-	RULE 12 : IF realisticni IS visoko AND nauka IS visoko 
-			THEN ohemija IS visoko, ohidmet IS visoko, ogeodezija IS srednje, oelektrotehnika IS srednje WITH 1.0;
-			
-	RULE 13 : IF realisticni IS visoko AND pomaganje IS visoko 
-			THEN ozdravstvo IS visoko WITH 1.0;
-			
-	RULE 14 : IF realisticni IS visoko AND pomaganje IS visoko 
-			THEN olicneusluge IS visoko WITH 0.75;
-			
-	RULE 15 : IF realisticni IS visoko AND sport IS visoko 
-			THEN olicneusluge IS visoko WITH 0.75;
-			
-	RULE 16 : IF realisticni IS visoko AND usluge IS visoko 
-			THEN olicneusluge IS visoko WITH 1.0;
-			
-	RULE 17 : IF realisticni IS visoko AND upravljanje IS visoko 
-			THEN olicneusluge IS visoko WITH 1.0;
-		// break			
-	RULE 18 : IF realisticni IS srednje AND poljoprivreda IS visoko 
-			THEN opoljoprivreda IS visoko WITH 1.0;
-			
-	RULE 19 : IF realisticni IS srednje AND poljoprivreda IS visoko
-			THEN osumarstvo IS visoko WITH 0.75;
-			
-	RULE 20 : IF realisticni IS srednje AND tehnika IS visoko 
-			THEN omasinstvo IS visoko, oelektrotehnika IS visoko WITH 1.0;
-			
-	RULE 21 : IF realisticni IS srednje AND kultura IS visoko 
-			THEN okultura IS visoko WITH 1.0;
-			
-	RULE 22 : IF realisticni IS srednje AND zanati IS visoko 
-			THEN opoljoprivreda IS srednje, ogeodezija IS visoko, omasinstvo IS visoko WITH 1.0;
-			
-	RULE 23 : IF realisticni IS srednje AND zanati IS visoko 
-			THEN osumarstvo IS srednje WITH 0.75;
-			
-	RULE 24 : IF realisticni IS srednje AND administracija IS visoko 
-			THEN oekonomijapravo IS visoko WITH 1.0;
-			
-	RULE 25 : IF realisticni IS srednje AND kreativnost IS visoko 
-			THEN otekstil IS srednje WITH 0.75;
-			
-	RULE 26 : IF realisticni IS srednje AND kreativnost IS visoko 
-			THEN okultura IS srednje WITH 1.0;
-			
-	RULE 27 : IF realisticni IS srednje AND literatura IS visoko 
-			THEN okultura IS visoko WITH 1.0; 
-			
-	RULE 28 : IF realisticni IS srednje AND bezbednost IS visoko 
-			THEN osaobracaj IS srednje, oekonomijapravo IS visoko WITH 1.0;
-			
-	RULE 29 : IF realisticni IS srednje AND nauka IS visoko 
-			THEN ohemija IS visoko, ohidmet IS srednje, ogeodezija IS srednje, oelektrotehnika IS srednje WITH 1.0;
-			
-	RULE 30 : IF realisticni IS srednje AND pomaganje IS visoko 
-			THEN ozdravstvo IS visoko WITH 1.0;
-			
-	RULE 31 : IF realisticni IS srednje AND pomaganje IS visoko 
-			THEN olicneusluge IS srednje WITH 0.75;
-			
-	RULE 32 : IF realisticni IS srednje AND sport IS visoko 
-			THEN olicneusluge IS srednje WITH 0.75;
-			
-	RULE 33 : IF realisticni IS srednje AND usluge IS visoko 
-			THEN olicneusluge IS visoko WITH 1.0;
-			
-	RULE 34 : IF realisticni IS srednje AND upravljanje IS visoko 
-			THEN olicneusluge IS visoko WITH 1.0;
-			//break 2
-	RULE 35 : IF realisticni IS slabo AND poljoprivreda IS visoko 
-			THEN opoljoprivreda IS srednje WITH 1.0;
-			
-	RULE 36 : IF realisticni IS slabo AND poljoprivreda IS visoko
-			THEN osumarstvo IS slabo WITH 0.75;
-			
-	RULE 37 : IF realisticni IS slabo AND tehnika IS visoko 
-			THEN omasinstvo IS srednje, oelektrotehnika IS srednje WITH 1.0;
-			
-	RULE 38 : IF realisticni IS slabo AND kultura IS visoko 
-			THEN okultura IS srednje WITH 1.0;
-			
-	RULE 39 : IF realisticni IS slabo AND zanati IS visoko 
-			THEN opoljoprivreda IS slabo, ogeodezija IS srednje, omasinstvo IS srednje WITH 1.0;
-			
-	RULE 40 : IF realisticni IS slabo AND zanati IS visoko 
-			THEN osumarstvo IS slabo WITH 0.75;
-			
-	RULE 41 : IF realisticni IS slabo AND administracija IS visoko 
-			THEN oekonomijapravo IS srednje WITH 1.0;
-			
-	RULE 42 : IF realisticni IS slabo AND kreativnost IS visoko 
-			THEN otekstil IS slabo WITH 0.75;
-			
-	RULE 43 : IF realisticni IS slabo AND kreativnost IS visoko 
-			THEN okultura IS srednje WITH 1.0;
-			
-	RULE 44 : IF realisticni IS slabo AND literatura IS visoko 
-			THEN okultura IS srednje WITH 1.0; 
-			
-	RULE 45 : IF realisticni IS slabo AND bezbednost IS visoko 
-			THEN osaobracaj IS slabo, oekonomijapravo IS slabo WITH 1.0;
-			
-	RULE 46 : IF realisticni IS slabo AND nauka IS visoko 
-			THEN ohemija IS srednje, ohidmet IS slabo, ogeodezija IS slabo, oelektrotehnika IS srednje WITH 1.0;
-			
-	RULE 47 : IF realisticni IS slabo AND pomaganje IS visoko 
-			THEN ozdravstvo IS srednje WITH 1.0;
-			
-	RULE 48 : IF realisticni IS slabo AND pomaganje IS visoko 
-			THEN olicneusluge IS slabo WITH 0.75;
-			
-	RULE 49 : IF realisticni IS slabo AND sport IS visoko 
-			THEN olicneusluge IS srednje WITH 0.75;
-			
-	RULE 50 : IF realisticni IS slabo AND usluge IS visoko 
-			THEN olicneusluge IS srednje WITH 1.0;
-			
-	RULE 51 : IF realisticni IS slabo AND upravljanje IS visoko 
-			THEN olicneusluge IS srednje WITH 1.0;
-			// srednja vrednost za oblasti interesovanja
-	RULE 52 : IF realisticni IS visoko AND poljoprivreda IS srednje 
-			THEN opoljoprivreda IS srednje WITH 1.0;
-			
-	RULE 53 : IF realisticni IS visoko AND poljoprivreda IS srednje
-			THEN osumarstvo IS slabo WITH 0.75;
-			
-	RULE 54 : IF realisticni IS visoko AND tehnika IS srednje 
-			THEN omasinstvo IS srednje, oelektrotehnika IS srednje WITH 1.0;
-			
-	RULE 55 : IF realisticni IS visoko AND kultura IS srednje 
-			THEN okultura IS srednje WITH 1.0;
-			
-	RULE 56 : IF realisticni IS visoko AND zanati IS srednje 
-			THEN opoljoprivreda IS srednje, ogeodezija IS srednje, omasinstvo IS srednje WITH 1.0;
-			
-	RULE 57 : IF realisticni IS visoko AND zanati IS srednje 
-			THEN osumarstvo IS slabo WITH 0.75;
-			
-	RULE 58 : IF realisticni IS visoko AND administracija IS srednje 
-			THEN oekonomijapravo IS srednje WITH 1.0;
-			
-	RULE 59 : IF realisticni IS visoko AND kreativnost IS srednje 
-			THEN otekstil IS srednje WITH 0.75;
-			
-	RULE 60 : IF realisticni IS visoko AND kreativnost IS srednje 
-			THEN okultura IS visoko WITH 1.0;
-			
-	RULE 61 : IF realisticni IS visoko AND literatura IS srednje 
-			THEN okultura IS slabo WITH 1.0; 
-			
-	RULE 62 : IF realisticni IS visoko AND bezbednost IS srednje 
-			THEN osaobracaj IS srednje, oekonomijapravo IS srednje WITH 1.0;
-			
-	RULE 63 : IF realisticni IS visoko AND nauka IS srednje 
-			THEN ohemija IS srednje, ohidmet IS slabo, ogeodezija IS slabo, oelektrotehnika IS srednje WITH 1.0;
-			
-	RULE 64 : IF realisticni IS visoko AND pomaganje IS srednje 
-			THEN ozdravstvo IS visoko WITH 1.0;
-			
-	RULE 65 : IF realisticni IS visoko AND pomaganje IS srednje 
-			THEN olicneusluge IS srednje WITH 0.75;
-			
-	RULE 66 : IF realisticni IS visoko AND sport IS srednje 
-			THEN olicneusluge IS srednje WITH 0.75;
-			
-	RULE 67 : IF realisticni IS visoko AND usluge IS srednje 
-			THEN olicneusluge IS srednje WITH 1.0;
-			
-	RULE 68 : IF realisticni IS visoko AND upravljanje IS srednje 
-			THEN olicneusluge IS srednje WITH 1.0;
-		// break			
-	RULE 69 : IF realisticni IS srednje AND poljoprivreda IS srednje 
-			THEN opoljoprivreda IS srednje WITH 1.0;
-			
-	RULE 70 : IF realisticni IS srednje AND poljoprivreda IS srednje
-			THEN osumarstvo IS slabo WITH 0.75;
-			
-	RULE 71 : IF realisticni IS srednje AND tehnika IS srednje 
-			THEN omasinstvo IS srednje, oelektrotehnika IS srednje WITH 1.0;
-			
-	RULE 72 : IF realisticni IS srednje AND kultura IS srednje 
-			THEN okultura IS srednje WITH 1.0;
-			
-	RULE 73 : IF realisticni IS srednje AND zanati IS srednje 
-			THEN opoljoprivreda IS srednje, ogeodezija IS srednje, omasinstvo IS srednje WITH 1.0;
-			
-	RULE 74 : IF realisticni IS srednje AND zanati IS srednje 
-			THEN osumarstvo IS slabo WITH 0.75;
-			
-	RULE 75 : IF realisticni IS srednje AND administracija IS srednje 
-			THEN oekonomijapravo IS srednje WITH 1.0;
-			
-	RULE 76 : IF realisticni IS srednje AND kreativnost IS srednje 
-			THEN otekstil IS slabo WITH 0.75;
-			
-	RULE 77 : IF realisticni IS srednje AND literatura IS srednje 
-			THEN okultura IS srednje WITH 1.0; 
-			
-	RULE 78 : IF realisticni IS srednje AND bezbednost IS srednje 
-			THEN osaobracaj IS srednje, oekonomijapravo IS srednje WITH 1.0;
-			
-	RULE 79 : IF realisticni IS srednje AND nauka IS srednje 
-			THEN ohemija IS srednje, oelektrotehnika IS srednje WITH 1.0;
-			
-	RULE 80 : IF realisticni IS srednje AND pomaganje IS srednje 
-			THEN ozdravstvo IS srednje WITH 1.0;
-			
-	RULE 81 : IF realisticni IS srednje AND pomaganje IS srednje 
-			THEN olicneusluge IS srednje WITH 0.75;
-			
-	RULE 82 : IF realisticni IS srednje AND sport IS srednje 
-			THEN olicneusluge IS srednje WITH 0.75;
-			
-	RULE 83 : IF realisticni IS srednje AND usluge IS srednje 
-			THEN olicneusluge IS srednje WITH 1.0;
-			
-	RULE 84 : IF realisticni IS srednje AND upravljanje IS srednje 
-			THEN olicneusluge IS srednje WITH 1.0;
-			//break 2
-	RULE 85 : IF realisticni IS slabo AND poljoprivreda IS srednje 
-			THEN opoljoprivreda IS srednje WITH 1.0;
-			
-	RULE 86 : IF realisticni IS slabo AND poljoprivreda IS srednje
-			THEN osumarstvo IS slabo WITH 0.75;
-			
-	RULE 87 : IF realisticni IS slabo AND tehnika IS srednje 
-			THEN omasinstvo IS srednje, oelektrotehnika IS srednje WITH 1.0;
-			
-	RULE 88 : IF realisticni IS slabo AND kultura IS srednje 
-			THEN okultura IS srednje WITH 1.0;
-			
-	RULE 89 : IF realisticni IS slabo AND zanati IS srednje 
-			THEN opoljoprivreda IS slabo, ogeodezija IS slabo, omasinstvo IS srednje WITH 1.0;
-			
-	RULE 90 : IF realisticni IS slabo AND zanati IS srednje 
-			THEN osumarstvo IS slabo WITH 0.75;
-			
-	RULE 91 : IF realisticni IS slabo AND administracija IS srednje 
-			THEN oekonomijapravo IS srednje WITH 1.0;
-			
-	RULE 92 : IF realisticni IS slabo AND kreativnost IS srednje 
-			THEN otekstil IS slabo WITH 0.75;
-			
-	RULE 93 : IF realisticni IS slabo AND kreativnost IS srednje 
-			THEN okultura IS srednje WITH 1.0;
-			
-	RULE 94 : IF realisticni IS slabo AND literatura IS srednje 
-			THEN okultura IS srednje WITH 1.0; 
-			
-	RULE 95 : IF realisticni IS slabo AND bezbednost IS srednje 
-			THEN osaobracaj IS slabo, oekonomijapravo IS slabo WITH 1.0;
-			
-	RULE 96 : IF realisticni IS slabo AND nauka IS srednje 
-			THEN ohemija IS srednje, ohidmet IS slabo, ogeodezija IS slabo, oelektrotehnika IS srednje WITH 1.0;
-			
-	RULE 97 : IF realisticni IS slabo AND pomaganje IS srednje 
-			THEN ozdravstvo IS srednje WITH 1.0;
-			
-	RULE 98 : IF realisticni IS slabo AND pomaganje IS srednje 
-			THEN olicneusluge IS slabo WITH 0.75;
-			
-	RULE 99 : IF realisticni IS slabo AND sport IS srednje 
-			THEN olicneusluge IS srednje WITH 0.75;
-			
-	RULE 100 : IF realisticni IS slabo AND usluge IS srednje 
-			THEN olicneusluge IS srednje WITH 1.0;
-			
-	RULE 101 : IF realisticni IS slabo AND upravljanje IS srednje 
-			THEN olicneusluge IS srednje WITH 1.0;
-			//slabe vrednosti za oblasti interesovanja
-	RULE 102 : IF realisticni IS visoko AND poljoprivreda IS slabo 
-			THEN opoljoprivreda IS slabo WITH 1.0;
-			
-	RULE 103 : IF realisticni IS visoko AND poljoprivreda IS slabo
-			THEN osumarstvo IS slabo WITH 0.75;
-			
-	RULE 104 : IF realisticni IS visoko AND tehnika IS slabo 
-			THEN omasinstvo IS slabo, oelektrotehnika IS slabo WITH 1.0;
-			
-	RULE 105 : IF realisticni IS visoko AND kultura IS slabo 
-			THEN okultura IS slabo WITH 1.0;
-			
-	RULE 106 : IF realisticni IS visoko AND zanati IS slabo 
-			THEN opoljoprivreda IS slabo, ogeodezija IS slabo, omasinstvo IS slabo WITH 1.0;
-			
-	RULE 107 : IF realisticni IS visoko AND zanati IS slabo 
-			THEN osumarstvo IS slabo WITH 0.75;
-			
-	RULE 108 : IF realisticni IS visoko AND administracija IS slabo 
-			THEN oekonomijapravo IS slabo WITH 1.0;
-			
-	RULE 109 : IF realisticni IS visoko AND kreativnost IS slabo 
-			THEN otekstil IS slabo WITH 0.75;
-			
-	RULE 110 : IF realisticni IS visoko AND kreativnost IS slabo 
-			THEN okultura IS slabo WITH 1.0;
-			
-	RULE 111 : IF realisticni IS visoko AND literatura IS slabo 
-			THEN okultura IS slabo WITH 1.0; 
-			
-	RULE 112 : IF realisticni IS visoko AND bezbednost IS slabo 
-			THEN osaobracaj IS slabo, oekonomijapravo IS slabo WITH 1.0;
-			
-	RULE 113 : IF realisticni IS visoko AND nauka IS slabo 
-			THEN ohemija IS slabo, ohidmet IS slabo, ogeodezija IS slabo, oelektrotehnika IS slabo WITH 1.0;
-			
-	RULE 114 : IF realisticni IS visoko AND pomaganje IS slabo 
-			THEN ozdravstvo IS slabo WITH 1.0;
-			
-	RULE 115 : IF realisticni IS visoko AND pomaganje IS slabo 
-			THEN olicneusluge IS slabo WITH 0.75;
-			
-	RULE 116 : IF realisticni IS visoko AND sport IS slabo 
-			THEN olicneusluge IS slabo WITH 0.75;
-			
-	RULE 117 : IF realisticni IS visoko AND usluge IS slabo 
-			THEN olicneusluge IS slabo WITH 1.0;
-			
-	RULE 118 : IF realisticni IS visoko AND upravljanje IS slabo 
-			THEN olicneusluge IS slabo WITH 1.0;
-		// break			
-	RULE 119 : IF realisticni IS srednje AND poljoprivreda IS slabo 
-			THEN opoljoprivreda IS slabo WITH 1.0;
-			
-	RULE 120 : IF realisticni IS srednje AND poljoprivreda IS slabo
-			THEN osumarstvo IS slabo WITH 0.75;
-			
-	RULE 121 : IF realisticni IS srednje AND tehnika IS slabo 
-			THEN omasinstvo IS slabo, oelektrotehnika IS slabo WITH 1.0;
-			
-	RULE 122 : IF realisticni IS srednje AND kultura IS slabo 
-			THEN okultura IS slabo WITH 1.0;
-			
-	RULE 123 : IF realisticni IS srednje AND zanati IS slabo 
-			THEN opoljoprivreda IS slabo, ogeodezija IS slabo, omasinstvo IS slabo WITH 1.0;
-			
-	RULE 124 : IF realisticni IS srednje AND zanati IS slabo 
-			THEN osumarstvo IS slabo WITH 0.75;
-			
-	RULE 125 : IF realisticni IS srednje AND administracija IS slabo 
-			THEN oekonomijapravo IS slabo WITH 1.0;
-			
-	RULE 126 : IF realisticni IS srednje AND kreativnost IS slabo 
-			THEN otekstil IS slabo WITH 0.75;
-			
-	RULE 127 : IF realisticni IS srednje AND literatura IS slabo 
-			THEN okultura IS slabo WITH 1.0; 
-			
-	RULE 128 : IF realisticni IS srednje AND bezbednost IS slabo 
-			THEN osaobracaj IS slabo, oekonomijapravo IS slabo WITH 1.0;
-			
-	RULE 129 : IF realisticni IS srednje AND nauka IS slabo 
-			THEN ohemija IS slabo, oelektrotehnika IS slabo WITH 1.0;
-			
-	RULE 130 : IF realisticni IS srednje AND pomaganje IS slabo 
-			THEN ozdravstvo IS slabo WITH 1.0;
-			
-	RULE 131 : IF realisticni IS srednje AND pomaganje IS slabo 
-			THEN olicneusluge IS slabo WITH 0.75;
-			
-	RULE 132 : IF realisticni IS srednje AND sport IS slabo 
-			THEN olicneusluge IS slabo WITH 0.75;
-			
-	RULE 133 : IF realisticni IS srednje AND usluge IS slabo 
-			THEN olicneusluge IS slabo WITH 1.0;
-			
-	RULE 134 : IF realisticni IS srednje AND upravljanje IS slabo 
-			THEN olicneusluge IS slabo WITH 1.0;
-			//break 2
-	RULE 135 : IF realisticni IS slabo AND poljoprivreda IS slabo 
-			THEN opoljoprivreda IS slabo WITH 1.0;
-			
-	RULE 136 : IF realisticni IS slabo AND poljoprivreda IS slabo
-			THEN osumarstvo IS slabo WITH 0.75;
-			
-	RULE 137 : IF realisticni IS slabo AND tehnika IS slabo 
-			THEN omasinstvo IS slabo, oelektrotehnika IS slabo WITH 1.0;
-			
-	RULE 138 : IF realisticni IS slabo AND kultura IS slabo 
-			THEN okultura IS srednje WITH 1.0;
-			
-	RULE 139 : IF realisticni IS slabo AND zanati IS slabo 
-			THEN opoljoprivreda IS slabo, ogeodezija IS slabo, omasinstvo IS slabo WITH 1.0;
-			
-	RULE 140 : IF realisticni IS slabo AND zanati IS slabo 
-			THEN osumarstvo IS slabo WITH 0.75;
-			
-	RULE 141 : IF realisticni IS slabo AND administracija IS slabo 
-			THEN oekonomijapravo IS slabo WITH 1.0;
-			
-	RULE 142 : IF realisticni IS slabo AND kreativnost IS slabo 
-			THEN otekstil IS slabo WITH 0.75;
-			
-	RULE 143 : IF realisticni IS slabo AND kreativnost IS slabo 
-			THEN okultura IS slabo WITH 1.0;
-			
-	RULE 144 : IF realisticni IS slabo AND literatura IS slabo 
-			THEN okultura IS slabo WITH 1.0; 
-			
-	RULE 145 : IF realisticni IS slabo AND bezbednost IS slabo 
-			THEN osaobracaj IS slabo, oekonomijapravo IS slabo WITH 1.0;
-			
-	RULE 146 : IF realisticni IS slabo AND nauka IS slabo 
-			THEN ohemija IS slabo, ohidmet IS slabo, ogeodezija IS slabo, oelektrotehnika IS slabo WITH 1.0;
-			
-	RULE 147 : IF realisticni IS slabo AND pomaganje IS slabo 
-			THEN ozdravstvo IS slabo WITH 1.0;
-			
-	RULE 148 : IF realisticni IS slabo AND pomaganje IS slabo 
-			THEN olicneusluge IS slabo WITH 0.75;
-			
-	RULE 149 : IF realisticni IS slabo AND sport IS slabo 
-			THEN olicneusluge IS slabo WITH 0.75;
-			
-	RULE 150 : IF realisticni IS slabo AND usluge IS slabo 
-			THEN olicneusluge IS slabo WITH 1.0;
-			
-	RULE 151 : IF realisticni IS slabo AND upravljanje IS slabo 
-			THEN olicneusluge IS slabo WITH 1.0;
-	// end realisticni tip
+			THEN omasinstvo IS visoko;
 	
-	// pravila za konvencionalni tip 
-	// pravila za visoke vrednosti oblasti interesovanja
-	RULE 152 : IF konvencionalni IS visoko AND administracija IS visoko 
-			THEN oekonomijapravo IS visoko WITH 1.0;
+	RULE 4 : IF realisticni IS visoko AND tehnika IS visoko
+			THEN oelektrotehnika IS visoko;
 			
-	RULE 153 : IF konvencionalni IS visoko AND bezbednost IS visoko 
-			THEN oekonomijapravo IS visoko WITH 0.75;
+	RULE 5 : IF realisticni IS visoko AND kultura IS visoko 
+			THEN omasinstvo IS visoko;
 			
-	RULE 154 : IF konvencionalni IS visoko AND tehnika IS visoko 
-			THEN osaobracaj IS srednje WITH 0.75;
+	RULE 6 : IF realisticni IS visoko AND kultura IS visoko
+			THEN oelektrotehnika IS visoko;
 			
-	RULE 155 : IF konvencionalni IS visoko AND tehnika IS visoko 
-			THEN omasinstvo IS visoko, oelektrotehnika IS visoko WITH 1.0;
+	RULE 7 : IF realisticni IS visoko AND zanati IS visoko 
+			THEN opoljoprivreda IS visoko;
 			
-	RULE 156 : IF konvencionalni IS visoko AND kreativnost IS visoko 
-			THEN otekstil IS visoko WITH 1.0;
+	RULE 8 : IF realisticni IS visoko AND zanati IS visoko 
+			THEN osumarstvo IS visoko;
 			
-	RULE 157 : IF konvencionalni IS visoko AND kreativnost IS visoko 
-			THEN okultura IS visoko, olicneusluge IS srednje WITH 1.0;
+	RULE 9 : IF realisticni IS visoko AND zanati IS visoko 
+			THEN ogeodezija IS visoko;
 			
-	RULE 158 : IF konvencionalni IS visoko AND kultura IS visoko 
-			THEN okultura IS visoko WITH 1.0;
+	RULE 10 : IF realisticni IS visoko AND zanati IS visoko 
+			THEN omasinstvo IS visoko;
 			
-	RULE 159 : IF konvencionalni IS visoko AND literatura IS visoko 
-			THEN oekonomijapravo IS visoko, okultura IS visoko WITH 1.0;
+	RULE 11 : IF realisticni IS visoko AND administracija IS visoko 
+			THEN oekonomijapravo IS visoko;
 			
-	RULE 160 : IF konvencionalni IS visoko AND nauka IS visoko 
-			THEN osaobracaj IS srednje, ogeodezija IS srednje, ohidmet IS srednje WITH 1.0; 
+	RULE 12 : IF realisticni IS visoko AND kreativnost IS visoko 
+			THEN otekstil IS visoko;
 			
-	RULE 161 : IF konvencionalni IS visoko AND pomaganje IS visoko 
-			THEN olicneusluge IS srednje, ozdravstvo IS visoko WITH 0.75;
+	RULE 13 : IF realisticni IS visoko AND kreativnost IS visoko 
+			THEN okultura IS visoko;
 			
-	RULE 162 : IF konvencionalni IS visoko AND poljoprivreda IS visoko 
-			THEN opoljoprivreda IS visoko, osumarstvo IS visoko WITH 1.0;
+	RULE 14 : IF realisticni IS visoko AND literatura IS visoko 
+			THEN okultura IS visoko;
 			
-	RULE 163 : IF konvencionalni IS visoko AND sport IS visoko 
+	RULE 15 : IF realisticni IS visoko AND bezbednost IS visoko 
+			THEN osaobracaj IS srednje;
+			
+	RULE 16 : IF realisticni IS visoko AND bezbednost IS visoko 
+			THEN oekonomijapravo IS visoko;
+			
+	RULE 17 : IF realisticni IS visoko AND nauka IS visoko 
+			THEN ohemija IS visoko;
+			
+	RULE 18 : IF realisticni IS visoko AND nauka IS visoko 
+			THEN ohidmet IS visoko;
+			
+	RULE 19 : IF realisticni IS visoko AND nauka IS visoko 
+			THEN ogeodezija IS srednje;
+			
+	RULE 20 : IF realisticni IS visoko AND nauka IS visoko 
+			THEN oelektrotehnika IS srednje;
+			
+	RULE 21 : IF realisticni IS visoko AND pomaganje IS visoko 
+			THEN otrgovinaugostiteljstvo IS slabo;
+			
+	RULE 22 : IF realisticni IS visoko AND pomaganje IS visoko 
+			THEN ozdravstvo IS visoko;
+			
+	RULE 23 : IF realisticni IS visoko AND pomaganje IS visoko 
 			THEN olicneusluge IS visoko;
 			
-	RULE 164 : IF konvencionalni IS visoko AND zanati IS visoko 
+	RULE 24 : IF realisticni IS visoko AND sport IS visoko 
 			THEN olicneusluge IS visoko;
 			
-	RULE 165 : IF konvencionalni IS visoko AND usluge IS visoko 
+	RULE 25 : IF realisticni IS visoko AND usluge IS visoko 
 			THEN olicneusluge IS visoko;
 			
-	RULE 166 : IF konvencionalni IS visoko AND upravljanje IS visoko 
-			THEN oekonomijapravo IS visoko, olicneusluge IS visoko;
-			// break
-	RULE 167 : IF konvencionalni IS srednje AND administracija IS visoko 
-			THEN oekonomijapravo IS visoko WITH 1.0;
-			
-	RULE 168 : IF konvencionalni IS srednje AND bezbednost IS visoko 
-			THEN oekonomijapravo IS visoko WITH 0.75;
-			
-	RULE 169 : IF konvencionalni IS srednje AND tehnika IS visoko 
-			THEN osaobracaj IS srednje WITH 0.75;
-			
-	RULE 170 : IF konvencionalni IS srednje AND tehnika IS visoko 
-			THEN omasinstvo IS visoko, oelektrotehnika IS visoko WITH 1.0;
-			
-	RULE 171 : IF konvencionalni IS srednje AND kreativnost IS visoko 
-			THEN otekstil IS srednje WITH 1.0;
-			
-	RULE 172 : IF konvencionalni IS srednje AND kreativnost IS visoko 
-			THEN okultura IS srednje, olicneusluge IS slabo WITH 1.0;
-			
-	RULE 173 : IF konvencionalni IS srednje AND kultura IS visoko 
-			THEN okultura IS visoko WITH 1.0;
-			
-	RULE 174 : IF konvencionalni IS srednje AND literatura IS visoko 
-			THEN oekonomijapravo IS visoko, okultura IS visoko WITH 1.0;
-			
-	RULE 175 : IF konvencionalni IS srednje AND nauka IS visoko 
-			THEN osaobracaj IS srednje, ogeodezija IS srednje, ohidmet IS srednje WITH 1.0; 
-			
-	RULE 176 : IF konvencionalni IS srednje AND pomaganje IS visoko 
-			THEN olicneusluge IS srednje, ozdravstvo IS visoko WITH 0.75;
-			
-	RULE 177 : IF konvencionalni IS srednje AND poljoprivreda IS visoko 
-			THEN opoljoprivreda IS visoko, osumarstvo IS visoko WITH 1.0;
-			
-	RULE 178 : IF konvencionalni IS srednje AND sport IS visoko 
-			THEN olicneusluge IS srednje;
-			
-	RULE 179 : IF konvencionalni IS srednje AND zanati IS visoko 
+	RULE 26 : IF realisticni IS visoko AND upravljanje IS visoko 
 			THEN olicneusluge IS visoko;
 			
-	RULE 180 : IF konvencionalni IS srednje AND usluge IS visoko 
+	RULE 27 : IF konvencionalni IS visoko AND administracija IS visoko 
+			THEN oekonomijapravo IS visoko;
+			
+	RULE 28 : IF konvencionalni IS visoko AND bezbednost IS visoko 
+			THEN oekonomijapravo IS visoko;
+			
+	RULE 29 : IF konvencionalni IS visoko AND tehnika IS visoko 
+			THEN osaobracaj IS srednje;
+			
+	RULE 30 : IF konvencionalni IS visoko AND tehnika IS visoko 
+			THEN omasinstvo IS visoko;
+			
+	RULE 31 : IF konvencionalni IS visoko AND tehnika IS visoko 
+			THEN oelektrotehnika IS visoko;
+			
+	RULE 32 : IF konvencionalni IS visoko AND kreativnost IS visoko 
+			THEN otekstil IS visoko;
+			
+	RULE 33 : IF konvencionalni IS visoko AND kreativnost IS visoko 
+			THEN okultura IS visoko;
+			
+	RULE 34 : IF konvencionalni IS visoko AND kreativnost IS visoko 
+			THEN olicneusluge IS srednje;
+			
+	RULE 35 : IF konvencionalni IS visoko AND kultura IS visoko 
+			THEN okultura IS visoko;
+			
+	RULE 36 : IF konvencionalni IS visoko AND literatura IS visoko 
+			THEN oekonomijapravo IS visoko;
+			
+	RULE 37 : IF konvencionalni IS visoko AND nauka IS visoko 
+			THEN osaobracaj IS srednje;
+			
+	RULE 38 : IF konvencionalni IS visoko AND nauka IS visoko 
+			THEN ogeodezija IS srednje;
+			
+	RULE 39 : IF konvencionalni IS visoko AND nauka IS visoko 
+			THEN ohidmet IS srednje;
+			
+	RULE 40 : IF konvencionalni IS visoko AND pomaganje IS visoko 
+			THEN olicneusluge IS srednje;
+			
+	RULE 41 : IF konvencionalni IS visoko AND pomaganje IS visoko 
+			THEN ozdravstvo IS srednje;
+			
+	RULE 42 : IF konvencionalni IS visoko AND poljoprivreda IS visoko 
+			THEN opoljoprivreda IS visoko;
+			
+	RULE 43 : IF konvencionalni IS visoko AND poljoprivreda IS visoko
+			THEN osumarstvo IS visoko;
+			
+	RULE 44 : IF konvencionalni IS visoko AND sport IS visoko 
 			THEN olicneusluge IS visoko;
 			
-	RULE 181 : IF konvencionalni IS srednje AND upravljanje IS visoko 
-			THEN oekonomijapravo IS visoko, olicneusluge IS visoko;	
-			// break
-	RULE 167 : IF konvencionalni IS slabo AND administracija IS visoko 
-			THEN oekonomijapravo IS srednje WITH 1.0;
-			
-	RULE 168 : IF konvencionalni IS slabo AND bezbednost IS visoko 
-			THEN oekonomijapravo IS srednje WITH 0.75;
-			
-	RULE 169 : IF konvencionalni IS slabo AND tehnika IS visoko 
-			THEN osaobracaj IS srednje WITH 0.75;
-			
-	RULE 170 : IF konvencionalni IS slabo AND tehnika IS visoko 
-			THEN omasinstvo IS srednje, oelektrotehnika IS srednje WITH 1.0;
-			
-	RULE 171 : IF konvencionalni IS slabo AND kreativnost IS visoko 
-			THEN otekstil IS srednje WITH 1.0;
-			
-	RULE 172 : IF konvencionalni IS slabo AND kreativnost IS visoko 
-			THEN okultura IS srednje, olicneusluge IS slabo WITH 1.0;
-			
-	RULE 173 : IF konvencionalni IS slabo AND kultura IS visoko 
-			THEN okultura IS visoko WITH 1.0;
-			
-	RULE 174 : IF konvencionalni IS slabo AND literatura IS visoko 
-			THEN oekonomijapravo IS srednje, okultura IS srednje WITH 1.0;
-			
-	RULE 175 : IF konvencionalni IS slabo AND nauka IS visoko 
-			THEN osaobracaj IS srednje, ogeodezija IS srednje, ohidmet IS srednje WITH 1.0; 
-			
-	RULE 176 : IF konvencionalni IS slabo AND pomaganje IS visoko 
-			THEN olicneusluge IS srednje, ozdravstvo IS srednje WITH 0.75;
-			
-	RULE 177 : IF konvencionalni IS slabo AND poljoprivreda IS visoko 
-			THEN opoljoprivreda IS srednje, osumarstvo IS srednje WITH 1.0;
-			
-	RULE 178 : IF konvencionalni IS slabo AND sport IS visoko 
-			THEN olicneusluge IS srednje;
-			
-	RULE 179 : IF konvencionalni IS slabo AND zanati IS visoko 
-			THEN olicneusluge IS srednje;
-			
-	RULE 180 : IF konvencionalni IS slabo AND usluge IS visoko 
-			THEN olicneusluge IS srednje;
-			
-	RULE 181 : IF konvencionalni IS slabo AND upravljanje IS visoko 
-			THEN oekonomijapravo IS srednje, olicneusluge IS srednje;
-	// 
-	// pravila za srednje vrednosti oblasti interesovanja
-	RULE 182 : IF konvencionalni IS visoko AND administracija IS srednje 
-			THEN oekonomijapravo IS srednje WITH 1.0;
-			
-	RULE 183 : IF konvencionalni IS visoko AND bezbednost IS srednje 
-			THEN oekonomijapravo IS srednje WITH 0.75;
-			
-	RULE 184 : IF konvencionalni IS visoko AND tehnika IS srednje 
-			THEN osaobracaj IS srednje WITH 0.75;
-			
-	RULE 185 : IF konvencionalni IS visoko AND tehnika IS srednje 
-			THEN omasinstvo IS srednje, oelektrotehnika IS srednje WITH 1.0;
-			
-	RULE 186 : IF konvencionalni IS visoko AND kreativnost IS visoko 
-			THEN otekstil IS srednje WITH 1.0;
-			
-	RULE 187 : IF konvencionalni IS visoko AND kreativnost IS srednje 
-			THEN okultura IS srednje, olicneusluge IS slabo WITH 1.0;
-			
-	RULE 188 : IF konvencionalni IS visoko AND kultura IS srednje 
-			THEN okultura IS visoko WITH 1.0;
-			
-	RULE 189 : IF konvencionalni IS visoko AND literatura IS srednje 
-			THEN oekonomijapravo IS srednje, okultura IS srednje WITH 1.0;
-			
-	RULE 190 : IF konvencionalni IS visoko AND nauka IS srednje 
-			THEN osaobracaj IS srednje, ogeodezija IS srednje, ohidmet IS srednje WITH 1.0; 
-			
-	RULE 191 : IF konvencionalni IS visoko AND pomaganje IS srednje 
-			THEN olicneusluge IS slabo, ozdravstvo IS srednje WITH 0.75;
-			
-	RULE 192 : IF konvencionalni IS visoko AND poljoprivreda IS srednje 
-			THEN opoljoprivreda IS visoko, osumarstvo IS srednje WITH 1.0;
-			
-	RULE 193 : IF konvencionalni IS visoko AND sport IS srednje 
-			THEN olicneusluge IS slabo;
-			
-	RULE 194 : IF konvencionalni IS visoko AND zanati IS srednje 
-			THEN olicneusluge IS srednje;
-			
-	RULE 195 : IF konvencionalni IS visoko AND usluge IS srednje 
+	RULE 45 : IF konvencionalni IS visoko AND zanati IS visoko 
 			THEN olicneusluge IS visoko;
 			
-	RULE 196 : IF konvencionalni IS visoko AND upravljanje IS srednje 
-			THEN oekonomijapravo IS visoko, olicneusluge IS srednje;
-			// break
-	RULE 197 : IF konvencionalni IS srednje AND administracija IS srednje 
-			THEN oekonomijapravo IS srednje WITH 1.0;
+	RULE 46 : IF konvencionalni IS visoko AND usluge IS visoko 
+			THEN olicneusluge IS visoko;
 			
-	RULE 198 : IF konvencionalni IS srednje AND bezbednost IS srednje 
-			THEN oekonomijapravo IS srednje WITH 0.75;
+	RULE 47 : IF konvencionalni IS visoko AND upravljanje IS visoko 
+			THEN oekonomijapravo IS visoko;
 			
-	RULE 199 : IF konvencionalni IS srednje AND tehnika IS srednje 
-			THEN osaobracaj IS srednje WITH 0.75;
-			
-	RULE 200 : IF konvencionalni IS srednje AND tehnika IS srednje 
-			THEN omasinstvo IS srednje, oelektrotehnika IS srednje WITH 1.0;
-			
-	RULE 201 : IF konvencionalni IS srednje AND kreativnost IS visoko 
-			THEN otekstil IS srednje WITH 1.0;
-			
-	RULE 202 : IF konvencionalni IS srednje AND kreativnost IS srednje 
-			THEN okultura IS srednje, olicneusluge IS slabo WITH 1.0;
-			
-	RULE 203 : IF konvencionalni IS srednje AND kultura IS srednje 
-			THEN okultura IS srednje WITH 1.0;
-			
-	RULE 204 : IF konvencionalni IS srednje AND literatura IS srednje 
-			THEN oekonomijapravo IS slabo, okultura IS srednje WITH 1.0;
-			
-	RULE 205 : IF konvencionalni IS srednje AND nauka IS srednje 
-			THEN osaobracaj IS srednje, ogeodezija IS srednje, ohidmet IS srednje, ohemija IS srednje WITH 1.0; 
-			
-	RULE 206 : IF konvencionalni IS srednje AND pomaganje IS srednje 
-			THEN olicneusluge IS slabo, ozdravstvo IS srednje WITH 0.75;
-			
-	RULE 207 : IF konvencionalni IS srednje AND poljoprivreda IS srednje 
-			THEN opoljoprivreda IS srednje, osumarstvo IS slabo WITH 1.0;
-			
-	RULE 208 : IF konvencionalni IS srednje AND sport IS srednje 
-			THEN olicneusluge IS slabo;
-			
-	RULE 209 : IF konvencionalni IS srednje AND zanati IS srednje 
-			THEN olicneusluge IS srednje;
-			
-	RULE 210 : IF konvencionalni IS srednje AND usluge IS srednje 
-			THEN olicneusluge IS srednje;
-			
-	RULE 211 : IF konvencionalni IS srednje AND upravljanje IS srednje 
-			THEN oekonomijapravo IS srednje, olicneusluge IS slabo;	
-			// break
-	RULE 212 : IF konvencionalni IS slabo AND administracija IS srednje 
-			THEN oekonomijapravo IS srednje WITH 1.0;
-			
-	RULE 213 : IF konvencionalni IS slabo AND bezbednost IS srednje 
-			THEN oekonomijapravo IS srednje WITH 0.75;
-			
-	RULE 214 : IF konvencionalni IS slabo AND tehnika IS srednje 
-			THEN osaobracaj IS srednje WITH 0.75;
-			
-	RULE 215 : IF konvencionalni IS slabo AND tehnika IS srednje 
-			THEN omasinstvo IS srednje, oelektrotehnika IS srednje WITH 1.0;
-			
-	RULE 216 : IF konvencionalni IS slabo AND kreativnost IS srednje 
-			THEN otekstil IS slabo WITH 0.5;
-			
-	RULE 217 : IF konvencionalni IS slabo AND kreativnost IS srednje 
-			THEN okultura IS srednje, olicneusluge IS slabo WITH 1.0;
-			
-	RULE 218 : IF konvencionalni IS slabo AND kultura IS srednje 
-			THEN okultura IS srednje WITH 1.0;
-			
-	RULE 219 : IF konvencionalni IS slabo AND literatura IS srednje 
-			THEN oekonomijapravo IS slabo, okultura IS srednje WITH 1.0;
-			
-	RULE 220 : IF konvencionalni IS slabo AND nauka IS srednje 
-			THEN osaobracaj IS slabo, ogeodezija IS srednje, ohidmet IS srednje, ohemija IS srednje WITH 1.0; 
-			
-	RULE 221 : IF konvencionalni IS slabo AND pomaganje IS srednje 
-			THEN olicneusluge IS slabo, ozdravstvo IS srednje WITH 0.75;
-			
-	RULE 222 : IF konvencionalni IS slabo AND poljoprivreda IS srednje 
-			THEN opoljoprivreda IS srednje, osumarstvo IS srednje WITH 1.0;
-			
-	RULE 223 : IF konvencionalni IS slabo AND sport IS srednje 
-			THEN olicneusluge IS slabo WITH 0.5;
-			
-	RULE 224 : IF konvencionalni IS slabo AND zanati IS srednje 
-			THEN olicneusluge IS slabo WITH 0.75;
-			
-	RULE 225 : IF konvencionalni IS slabo AND usluge IS srednje 
-			THEN olicneusluge IS srednje WITH 1.0;
-			
-	RULE 226 : IF konvencionalni IS slabo AND upravljanje IS srednje 
-			THEN oekonomijapravo IS srednje, olicneusluge IS slabo WITH 1.0;
-	// 
-	// pravila za slabe vrednosti oblasti interesovanja
-	RULE 227 : IF konvencionalni IS visoko AND administracija IS slabo 
-			THEN oekonomijapravo IS slabo WITH 1.0;
-			
-	RULE 228 : IF konvencionalni IS visoko AND bezbednost IS slabo 
-			THEN oekonomijapravo IS slabo WITH 0.75;
-			
-	RULE 229 : IF konvencionalni IS visoko AND tehnika IS slabo 
-			THEN osaobracaj IS slabo WITH 0.75;
-			
-	RULE 230 : IF konvencionalni IS visoko AND tehnika IS slabo 
-			THEN omasinstvo IS slabo, oelektrotehnika IS slabo WITH 1.0;
-			
-	RULE 231 : IF konvencionalni IS visoko AND kreativnost IS slabo 
-			THEN otekstil IS slabo WITH 1.0;
-			
-	RULE 232 : IF konvencionalni IS visoko AND kreativnost IS slabo 
-			THEN okultura IS slabo, olicneusluge IS slabo WITH 1.0;
-			
-	RULE 233 : IF konvencionalni IS visoko AND kultura IS slabo 
-			THEN okultura IS slabo WITH 1.0;
-			
-	RULE 234 : IF konvencionalni IS visoko AND literatura IS slabo 
-			THEN oekonomijapravo IS slabo, okultura IS slabo WITH 1.0;
-			
-	RULE 235 : IF konvencionalni IS visoko AND nauka IS slabo 
-			THEN osaobracaj IS slabo, ogeodezija IS slabo, ohidmet IS slabo WITH 1.0; 
-			
-	RULE 236 : IF konvencionalni IS visoko AND pomaganje IS slabo 
-			THEN olicneusluge IS slabo, ozdravstvo IS slabo WITH 0.75;
-			
-	RULE 237 : IF konvencionalni IS visoko AND poljoprivreda IS slabo 
-			THEN opoljoprivreda IS slabo, osumarstvo IS slabo WITH 1.0;
-			
-	RULE 238 : IF konvencionalni IS visoko AND sport IS slabo 
-			THEN olicneusluge IS slabo;
-			
-	RULE 239 : IF konvencionalni IS visoko AND zanati IS slabo 
-			THEN olicneusluge IS slabo;
-			
-	RULE 240 : IF konvencionalni IS visoko AND usluge IS slabo 
-			THEN olicneusluge IS slabo;
-			
-	RULE 241 : IF konvencionalni IS visoko AND upravljanje IS slabo 
-			THEN oekonomijapravo IS slabo, olicneusluge IS slabo;
-			// break
-	RULE 242 : IF konvencionalni IS srednje AND administracija IS slabo 
-			THEN oekonomijapravo IS slabo WITH 1.0;
-			
-	RULE 243 : IF konvencionalni IS srednje AND bezbednost IS slabo 
-			THEN oekonomijapravo IS slabo WITH 0.75;
-			
-	RULE 244 : IF konvencionalni IS srednje AND tehnika IS slabo 
-			THEN osaobracaj IS slabo WITH 0.75;
-			
-	RULE 245 : IF konvencionalni IS srednje AND tehnika IS slabo 
-			THEN omasinstvo IS slabo, oelektrotehnika IS slabo WITH 1.0;
-			
-	RULE 246 : IF konvencionalni IS srednje AND kreativnost IS slabo 
-			THEN otekstil IS slabo WITH 1.0;
-			
-	RULE 247 : IF konvencionalni IS srednje AND kreativnost IS slabo 
-			THEN okultura IS slabo, olicneusluge IS slabo WITH 1.0;
-			
-	RULE 248 : IF konvencionalni IS srednje AND kultura IS slabo 
-			THEN okultura IS slabo WITH 1.0;
-			
-	RULE 249 : IF konvencionalni IS srednje AND literatura IS slabo 
-			THEN oekonomijapravo IS slabo, okultura IS slabo WITH 1.0;
-			
-	RULE 250 : IF konvencionalni IS srednje AND nauka IS slabo 
-			THEN osaobracaj IS slabo, ogeodezija IS slabo, ohidmet IS slabo, ohemija IS slabo WITH 1.0; 
-			
-	RULE 251 : IF konvencionalni IS srednje AND pomaganje IS slabo 
-			THEN olicneusluge IS slabo, ozdravstvo IS slabo WITH 0.75;
-			
-	RULE 252 : IF konvencionalni IS srednje AND poljoprivreda IS slabo 
-			THEN opoljoprivreda IS slabo, osumarstvo IS slabo WITH 1.0;
-			
-	RULE 253 : IF konvencionalni IS srednje AND sport IS slabo 
-			THEN olicneusluge IS slabo;
-			
-	RULE 254 : IF konvencionalni IS srednje AND zanati IS slabo 
-			THEN olicneusluge IS slabo;
-			
-	RULE 255 : IF konvencionalni IS srednje AND usluge IS slabo 
-			THEN olicneusluge IS slabo;
-			
-	RULE 256 : IF konvencionalni IS srednje AND upravljanje IS slabo 
-			THEN oekonomijapravo IS slabo, olicneusluge IS slabo;	
-			// break
-	RULE 257 : IF konvencionalni IS slabo AND administracija IS slabo 
-			THEN oekonomijapravo IS slabo WITH 1.0;
-			
-	RULE 258 : IF konvencionalni IS slabo AND bezbednost IS slabo 
-			THEN oekonomijapravo IS slabo WITH 0.75;
-			
-	RULE 259 : IF konvencionalni IS slabo AND tehnika IS slabo 
-			THEN osaobracaj IS slabo WITH 0.75;
-			
-	RULE 260 : IF konvencionalni IS slabo AND tehnika IS slabo 
-			THEN omasinstvo IS slabo, oelektrotehnika IS slabo WITH 1.0;
-			
-	RULE 261 : IF konvencionalni IS slabo AND kreativnost IS slabo 
-			THEN otekstil IS slabo WITH 0.5;
-			
-	RULE 262 : IF konvencionalni IS slabo AND kreativnost IS slabo 
-			THEN okultura IS slabo, olicneusluge IS slabo WITH 1.0;
-			
-	RULE 263 : IF konvencionalni IS slabo AND kultura IS slabo 
-			THEN okultura IS slabo WITH 1.0;
-			
-	RULE 264 : IF konvencionalni IS slabo AND literatura IS slabo 
-			THEN oekonomijapravo IS slabo, okultura IS slabo WITH 1.0;
-			
-	RULE 265 : IF konvencionalni IS slabo AND nauka IS slabo 
-			THEN osaobracaj IS slabo, ogeodezija IS slabo, ohidmet IS slabo, ohemija IS slabo WITH 1.0; 
-			
-	RULE 266 : IF konvencionalni IS slabo AND pomaganje IS slabo 
-			THEN olicneusluge IS slabo, ozdravstvo IS slabo WITH 0.75;
-			
-	RULE 267 : IF konvencionalni IS slabo AND poljoprivreda IS slabo 
-			THEN opoljoprivreda IS slabo, osumarstvo IS slabo WITH 1.0;
-			
-	RULE 268 : IF konvencionalni IS slabo AND sport IS slabo 
-			THEN olicneusluge IS slabo WITH 0.5;
-			
-	RULE 269 : IF konvencionalni IS slabo AND zanati IS slabo 
-			THEN olicneusluge IS slabo WITH 0.75;
-			
-	RULE 270 : IF konvencionalni IS slabo AND usluge IS slabo 
-			THEN olicneusluge IS slabo WITH 1.0;
-			
-	RULE 271 : IF konvencionalni IS slabo AND upravljanje IS slabo 
-			THEN oekonomijapravo IS slabo, olicneusluge IS slabo WITH 1.0;		
-	// end konvencionalni tip
+	RULE 48 : IF konvencionalni IS visoko AND upravljanje IS visoko 
+			THEN olicneusluge IS visoko;
 			
 	RULE 49 : IF umetnicki IS visoko AND administracija IS visoko 
 			THEN okultura IS visoko;

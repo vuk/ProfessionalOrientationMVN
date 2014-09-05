@@ -105,7 +105,7 @@ public class Colleges {
             /*rs = st.executeQuery("SELECT * FROM colleges WHERE interest LIKE '%"+first+",%'"
             		+ " AND interest LIKE '%"+second+",%'"
             				+ " AND interest LIKE '%"+third+",%'");*/
-            rs = st.executeQuery("SELECT * FROM colleges WHERE interest LIKE '%"+first+",%' ORDER BY ponder DESC LIMIT 5");
+            rs = st.executeQuery("SELECT * FROM colleges WHERE interest LIKE '%"+first+",%' ORDER BY ponder DESC");
             while (rs.next()) {
             	College c = new College();
             	c.setId(rs.getInt(1));
@@ -128,7 +128,7 @@ public class Colleges {
             		+ " AND interest LIKE '%"+second+",%') "
             				+ " OR (interest LIKE '%"+first+",%' AND interest LIKE '%"+third+",%')"
             						+ " OR (interest LIKE '%"+second+",%' AND interest LIKE '%"+third+",%')");*/
-            rs = st.executeQuery("SELECT * FROM colleges WHERE interest LIKE '%"+second+",%' ORDER BY ponder DESC LIMIT 5");
+            rs = st.executeQuery("SELECT * FROM colleges WHERE interest LIKE '%"+second+",%' ORDER BY ponder DESC");
             while (rs.next()) {
             	College c = new College();
             	c.setId(rs.getInt(1));
@@ -151,7 +151,7 @@ public class Colleges {
             /*rs = st.executeQuery("SELECT * FROM colleges WHERE interest LIKE '%"+first+",%'"
             				+ " OR interest LIKE '%"+third+",%'"
             						+ " OR interest LIKE '%"+second+",%'");*/
-            rs = st.executeQuery("SELECT * FROM colleges WHERE interest LIKE '%"+third+",%' ORDER BY ponder DESC LIMIT 5");
+            rs = st.executeQuery("SELECT * FROM colleges WHERE interest LIKE '%"+third+",%' ORDER BY ponder DESC");
             while (rs.next()) {
             	College c = new College();
             	c.setId(rs.getInt(1));

@@ -115,7 +115,9 @@ public class Colleges {
             	c.setDescription(rs.getString(6));
             	c.setInterest(rs.getString(7));
             	c.setPonder(rs.getInt(8));
-            	
+            	if(colleges.contains(c)){
+            		continue;
+            	}
             	colleges.add(c);
             }
             

@@ -190,7 +190,7 @@ public class Colleges {
             	}
             }
             //Collections.sort(top10colleges, new CollegePriorityComparator());
-            String json = new Gson().toJson(colleges);
+            String json = new Gson().toJson(top15colleges);
             return json;
 
         } catch (SQLException ex) {

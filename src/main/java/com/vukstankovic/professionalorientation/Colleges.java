@@ -106,9 +106,9 @@ public class Colleges {
             System.out.println("K: "+k+" I: "+i+" total: "+total+" sum: "+sum);
         	for(Iterator<Entry<String,Double>>it=sorted_interests.entrySet().iterator();it.hasNext();){
                 Entry<String, Double> entry = it.next();
-                if(k >= i) continue;
+                if(k > i) continue;
                 double percent = entry.getValue()/sum;
-                int limit = (int) ((int) 20*percent);
+                int limit = (int) ((int) 30*percent);
                 rs = st.executeQuery("SELECT * FROM colleges WHERE interest LIKE '%"+entry.getKey()+",%' ORDER BY ponder DESC LIMIT "+limit);
                 while (rs.next()) {
                 	System.out.println("K: "+k+" I: "+i);

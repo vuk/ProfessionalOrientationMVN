@@ -122,9 +122,14 @@ public class Colleges {
                 	c.setInterest(rs.getString(7));
                 	c.setPonder(rs.getInt(8));
                 	c.setPriority(i-k);
-                	if(colleges.contains(c)){
-                		c.setPriority(c.getPriority()+1);
-                		continue;
+                	Iterator<College> valid = colleges.iterator();
+                	while(valid.hasNext())
+                	{
+                	    College college = valid.next();
+                	    if(college.getId() == c.getId()){
+                	    	c.setPriority(c.getPriority()+1);
+                    		continue;
+                	    }
                 	}
                 	colleges.add(c);
                 }

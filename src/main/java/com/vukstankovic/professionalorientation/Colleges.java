@@ -24,7 +24,6 @@ import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.Statement;
 import com.vukstankovic.professionalorientation.classes.College;
 import com.vukstankovic.professionalorientation.helpers.CollegeComparator;
-import com.vukstankovic.professionalorientation.helpers.CollegePriorityComparator;
 import com.vukstankovic.professionalorientation.helpers.ValueComparator;
 import com.vukstankovic.professionalorientation.config.DBConnect;
 
@@ -88,109 +87,55 @@ public class Colleges {
             System.out.println(interests.toString()+ "Test2");
             System.out.println(sorted_interests.toString()+ "Test");
             int i = 1;
-            String first = "";
-            String second = "";
-            String third = "";
+            double sum = 0;
             for(Iterator<Entry<String,Double>>it=sorted_interests.entrySet().iterator();it.hasNext();){
                 Entry<String, Double> entry = it.next();
-                if(i == 1) first = entry.getKey();
-                if(i == 2) second = entry.getKey();
-                if(i == 3) third = entry.getKey();
+                sum += entry.getValue();
                 i++;
             }
-               
-            System.out.println(first + " " + second + " " +third + "Test 3");
-            
-            rs.close();
-            /*rs = st.executeQuery("SELECT * FROM colleges WHERE interest LIKE '%"+first+",%'"
-            		+ " AND interest LIKE '%"+second+",%'"
-            				+ " AND interest LIKE '%"+third+",%'");*/
-            rs = st.executeQuery("SELECT * FROM colleges WHERE interest LIKE '%"+first+",%' ORDER BY ponder DESC");
-            while (rs.next()) {
-            	College c = new College();
-            	c.setId(rs.getInt(1));
-            	c.setTitle(rs.getString(2));
-            	c.setProgramme(rs.getString(3));
-            	c.setAbbrevation(rs.getString(4));
-            	c.setArea(rs.getString(5));
-            	c.setDescription(rs.getString(6));
-            	c.setInterest(rs.getString(7));
-            	c.setPonder(rs.getInt(8));
-            	c.setPriority(1);
-            	if(colleges.contains(c)){
-            		continue;
-            	}
-            	colleges.add(c);
+            double total = 0;
+            i = 0;
+            for(Iterator<Entry<String,Double>>it=sorted_interests.entrySet().iterator();it.hasNext();){
+                Entry<String, Double> entry = it.next();
+                if(total/sum*100 < 75){
+                	total += entry.getValue(); 
+                	i++;
+                }
             }
             
-            rs.close();
-/*            rs = st.executeQuery("SELECT * FROM colleges WHERE (interest LIKE '%"+first+",%'"
-            		+ " AND interest LIKE '%"+second+",%') "
-            				+ " OR (interest LIKE '%"+first+",%' AND interest LIKE '%"+third+",%')"
-            						+ " OR (interest LIKE '%"+second+",%' AND interest LIKE '%"+third+",%')");*/
-            rs = st.executeQuery("SELECT * FROM colleges WHERE interest LIKE '%"+second+",%' ORDER BY ponder DESC");
-            while (rs.next()) {
-            	College c = new College();
-            	c.setId(rs.getInt(1));
-            	c.setTitle(rs.getString(2));
-            	c.setProgramme(rs.getString(3));
-            	c.setAbbrevation(rs.getString(4));
-            	c.setArea(rs.getString(5));
-            	c.setDescription(rs.getString(6));
-            	c.setInterest(rs.getString(7));
-            	c.setPonder(rs.getInt(8));
-            	c.setPriority(2);
-            	
-            	if(colleges.contains(c)){
-            		continue;
-            	}
-            	colleges.add(c);
+            for(int k = 0; k < i; k++){
+            	for(Iterator<Entry<String,Double>>it=sorted_interests.entrySet().iterator();it.hasNext();){
+                    Entry<String, Double> entry = it.next();
+                    double percent = entry.getValue()/sum*100;
+                    int limit = (int) ((int) 15*percent);
+                    rs = st.executeQuery("SELECT * FROM colleges WHERE interest LIKE '%"+entry.getKey()+",%' ORDER BY ponder DESC LIMIT "+limit);
+                    while (rs.next()) {
+                    	College c = new College();
+                    	c.setId(rs.getInt(1));
+                    	c.setTitle(rs.getString(2));
+                    	c.setProgramme(rs.getString(3));
+                    	c.setAbbrevation(rs.getString(4));
+                    	c.setArea(rs.getString(5));
+                    	c.setDescription(rs.getString(6));
+                    	c.setInterest(rs.getString(7));
+                    	c.setPonder(rs.getInt(8));
+                    	c.setPriority(i-k);
+                    	if(colleges.contains(c)){
+                    		c.setPriority(c.getPriority()+1);
+                    		continue;
+                    	}
+                    	colleges.add(c);
+                    }
+                    
+                    rs.close();
+                    k++;
+                }
             }
-
-            rs.close();
-            /*rs = st.executeQuery("SELECT * FROM colleges WHERE interest LIKE '%"+first+",%'"
-            				+ " OR interest LIKE '%"+third+",%'"
-            						+ " OR interest LIKE '%"+second+",%'");*/
-            rs = st.executeQuery("SELECT * FROM colleges WHERE interest LIKE '%"+third+",%' ORDER BY ponder DESC");
-            while (rs.next()) {
-            	College c = new College();
-            	c.setId(rs.getInt(1));
-            	c.setTitle(rs.getString(2));
-            	c.setProgramme(rs.getString(3));
-            	c.setAbbrevation(rs.getString(4));
-            	c.setArea(rs.getString(5));
-            	c.setDescription(rs.getString(6));
-            	c.setInterest(rs.getString(7));
-            	c.setPonder(rs.getInt(8));
-            	c.setPriority(3);
-            	
-            	if(colleges.contains(c)){
-            		continue;
-            	}
-            	colleges.add(c);
-            }
-            ArrayList<College> top15colleges = new ArrayList<College>();
+            
             Collections.sort(colleges, new CollegeComparator());
             Collections.reverse(colleges);
-            int firstPick = 0;
-            int secondPick = 0;
-            int thirdPick = 0;
-            for(int j = 0; j < 50; j++){
-            	if(firstPick < 5 && colleges.get(j).getPriority() == 1){
-            		top15colleges.add(colleges.get(j));
-            		firstPick ++;
-            	}
-            	if(secondPick < 5 && colleges.get(j).getPriority() == 2){
-            		top15colleges.add(colleges.get(j));
-            		secondPick ++;
-            	}
-            	if(thirdPick < 5 && colleges.get(j).getPriority() == 3){
-            		top15colleges.add(colleges.get(j));
-            		thirdPick ++;
-            	}
-            }
             //Collections.sort(top10colleges, new CollegePriorityComparator());
-            String json = new Gson().toJson(top15colleges);
+            String json = new Gson().toJson(colleges);
             return json;
 
         } catch (SQLException ex) {

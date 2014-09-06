@@ -103,6 +103,7 @@ public class Colleges {
                 }
             }
             int k = 0;
+            boolean exists = false;
             System.out.println("K: "+k+" I: "+i+" total: "+total+" sum: "+sum);
         	for(Iterator<Entry<String,Double>>it=sorted_interests.entrySet().iterator();it.hasNext();){
                 Entry<String, Double> entry = it.next();
@@ -111,6 +112,7 @@ public class Colleges {
                 int limit = (int) ((int) 30*percent);
                 rs = st.executeQuery("SELECT * FROM colleges WHERE interest LIKE '%"+entry.getKey()+",%' ORDER BY ponder DESC LIMIT "+limit);
                 while (rs.next()) {
+                	exists = false;
                 	System.out.println("K: "+k+" I: "+i);
                 	College c = new College();
                 	c.setId(rs.getInt(1));
@@ -128,10 +130,13 @@ public class Colleges {
                 	    College college = valid.next();
                 	    if(college.getId() == c.getId()){
                 	    	c.setPriority(c.getPriority()+1);
-                    		continue;
+                    		exists = true;
                 	    }
                 	}
-                	colleges.add(c);
+                	if(!exists){
+                		colleges.add(c);
+                	}
+                	
                 }
                 
                 rs.close();

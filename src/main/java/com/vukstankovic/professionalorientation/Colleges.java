@@ -103,6 +103,7 @@ public class Colleges {
                 }
             }
             int k = 0;
+            System.out.println("K: "+k+" I: "+i+" total: "+total+" sum: "+sum);
         	for(Iterator<Entry<String,Double>>it=sorted_interests.entrySet().iterator();it.hasNext();){
                 Entry<String, Double> entry = it.next();
                 

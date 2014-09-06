@@ -111,6 +111,7 @@ public class Colleges {
                 int limit = (int) ((int) 15*percent);
                 rs = st.executeQuery("SELECT * FROM colleges WHERE interest LIKE '%"+entry.getKey()+",%' ORDER BY ponder DESC LIMIT "+limit);
                 while (rs.next()) {
+                	System.out.println("K: "+k+" I: "+i);
                 	College c = new College();
                 	c.setId(rs.getInt(1));
                 	c.setTitle(rs.getString(2));

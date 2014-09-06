@@ -20,14 +20,22 @@ public class CollegeComparator implements Comparator<College> {
 	public double getMultiplier(int i){
 		switch (i) {
 		case 1:
-			return 0.45;
+			return 0.41;
 		case 2: 
-			return 0.46;
+			return 0.42;
 		case 3: 
-			return 0.47;
+			return 0.43;
 		case 4: 
-			return 0.48;
+			return 0.44;
 		case 5: 
+			return 0.45;
+		case 6: 
+			return 0.46;
+		case 7: 
+			return 0.47;
+		case 8: 
+			return 0.48;
+		case 9: 
 			return 0.49;
 		default: 
 			return 0.5;

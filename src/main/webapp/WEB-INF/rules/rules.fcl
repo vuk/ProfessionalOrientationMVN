@@ -991,7 +991,7 @@ RULEBLOCK porules
 			THEN oekonomijapravo IS slabo, okultura IS srednje WITH 1.0;
 			
 	RULE 220 : IF konvencionalni IS slabo AND nauka IS srednje 
-			THEN osaobracaj IS slabo, ogeodezija IS srednje, ohidmet IS srednje, ohemija IS srednje WITH 1.0; 
+			THEN osaobracaj IS slabo, ogeodezija IS srednje, ohidmet IS srednje, ohemija IS slabo WITH 1.0; 
 			
 	RULE 221 : IF konvencionalni IS slabo AND pomaganje IS srednje 
 			THEN olicneusluge IS slabo, ozdravstvo IS srednje WITH 0.75;
@@ -1317,7 +1317,7 @@ RULEBLOCK porules
 			THEN okultura IS visoko WITH 1.0;
 			
 	RULE 325 : IF umetnicki IS visoko AND nauka IS srednje 
-			THEN ohemija IS srednje, omasinstvo IS srednje, oelektrotehnika IS srednje WITH 1.0;
+			THEN ohemija IS slabo, omasinstvo IS srednje, oelektrotehnika IS srednje WITH 1.0;
 			
 	RULE 326 : IF umetnicki IS visoko AND pomaganje IS srednje 
 			THEN olicneusluge IS slabo WITH 1.0;
@@ -1367,7 +1367,7 @@ RULEBLOCK porules
 			THEN okultura IS srednje WITH 1.0;
 			
 	RULE 341 : IF umetnicki IS srednje AND nauka IS srednje 
-			THEN ohemija IS srednje, omasinstvo IS slabo, oelektrotehnika IS srednje WITH 1.0;
+			THEN ohemija IS slabo, omasinstvo IS slabo, oelektrotehnika IS srednje WITH 1.0;
 			
 	RULE 342 : IF umetnicki IS srednje AND pomaganje IS srednje 
 			THEN olicneusluge IS slabo WITH 1.0;
@@ -1992,7 +1992,7 @@ RULEBLOCK porules
 			THEN okultura IS visoko WITH 1.0;
 			
 	RULE 539 : IF preduzetnicki IS visoko AND nauka IS visoko 
-			THEN ohemija IS visoko, ogeodezija IS visoko, oelektrotehnika IS visoko WITH 1.0;
+			THEN ohemija IS srednje, ogeodezija IS visoko, oelektrotehnika IS visoko WITH 1.0;
 			
 	RULE 540 : IF preduzetnicki IS visoko AND pomaganje IS visoko 
 			THEN olicneusluge IS visoko, ozdravstvo IS visoko WITH 1.0;
@@ -2033,7 +2033,7 @@ RULEBLOCK porules
 			THEN okultura IS visoko WITH 1.0;
 			
 	RULE 552 : IF preduzetnicki IS srednje AND nauka IS visoko 
-			THEN ohemija IS visoko, ogeodezija IS visoko, oelektrotehnika IS visoko WITH 1.0;
+			THEN ohemija IS srednje, ogeodezija IS visoko, oelektrotehnika IS visoko WITH 1.0;
 			
 	RULE 553 : IF preduzetnicki IS srednje AND pomaganje IS visoko 
 			THEN olicneusluge IS visoko, ozdravstvo IS visoko WITH 1.0;
@@ -2483,10 +2483,10 @@ RULEBLOCK porules
 			THEN okultura IS visoko WITH 1.0;
 	
 	RULE 694 : IF istrazivacki IS visoko AND literatura IS srednje 
-			THEN okultura IS visoko, ohemija IS visoko, ozdravstvo IS visoko WITH 1.0;
+			THEN okultura IS visoko, ohemija IS srednje, ozdravstvo IS srednje WITH 1.0;
 			
 	RULE 695 : IF istrazivacki IS visoko AND nauka IS srednje 
-			THEN ohemija IS visoko, ozdravstvo IS visoko, osaobracaj IS visoko WITH 1.0;
+			THEN ohemija IS visoko, ozdravstvo IS visoko, osaobracaj IS srednje WITH 1.0;
 			
 	RULE 696 : IF istrazivacki IS visoko AND pomaganje IS srednje 
 			THEN ozdravstvo IS visoko, olicneusluge IS visoko WITH 1.0;
@@ -2524,10 +2524,10 @@ RULEBLOCK porules
 			THEN okultura IS visoko WITH 1.0;
 	
 	RULE 707 : IF istrazivacki IS srednje AND literatura IS srednje 
-			THEN okultura IS visoko, ohemija IS visoko, ozdravstvo IS visoko WITH 1.0;
+			THEN okultura IS visoko, ohemija IS srednje, ozdravstvo IS srednje WITH 1.0;
 			
 	RULE 708 : IF istrazivacki IS srednje AND nauka IS srednje 
-			THEN ohemija IS visoko, ozdravstvo IS visoko, osaobracaj IS visoko WITH 1.0;
+			THEN ohemija IS srednje, ozdravstvo IS srednje, osaobracaj IS srednje WITH 1.0;
 			
 	RULE 709 : IF istrazivacki IS srednje AND pomaganje IS srednje 
 			THEN ozdravstvo IS visoko, olicneusluge IS visoko WITH 1.0;
@@ -2606,10 +2606,10 @@ RULEBLOCK porules
 			THEN okultura IS visoko WITH 1.0;
 	
 	RULE 733 : IF istrazivacki IS visoko AND literatura IS slabo 
-			THEN okultura IS visoko, ohemija IS visoko, ozdravstvo IS visoko WITH 1.0;
+			THEN okultura IS visoko, ohemija IS srednje, ozdravstvo IS srednje WITH 1.0;
 			
 	RULE 734 : IF istrazivacki IS visoko AND nauka IS slabo 
-			THEN ohemija IS visoko, ozdravstvo IS visoko, osaobracaj IS visoko WITH 1.0;
+			THEN ohemija IS srednje, ozdravstvo IS srednje, osaobracaj IS slabo WITH 1.0;
 			
 	RULE 735 : IF istrazivacki IS visoko AND pomaganje IS slabo 
 			THEN ozdravstvo IS visoko, olicneusluge IS visoko WITH 1.0;

@@ -148,8 +148,8 @@ public class Results {
     		fis.setVariable("drustveni", Double.parseDouble(formData.getFirst("social")));
     		
     		fis.evaluate();
-    		for( Rule r : fis.getFunctionBlock("block1").getFuzzyRuleBlock("porules").getRules() )
-    		      System.out.println(r);
+    		//for( Rule r : fis.getFunctionBlock("block1").getFuzzyRuleBlock("porules").getRules() )
+    		      //System.out.println(r);
     		double poljoprivreda = fis.getVariable("opoljoprivreda").defuzzify();
     		double sumarstvo = fis.getVariable("osumarstvo").defuzzify();
     		double geodezija = fis.getVariable("ogeodezija").defuzzify();

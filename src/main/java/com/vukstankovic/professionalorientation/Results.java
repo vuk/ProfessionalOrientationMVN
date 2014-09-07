@@ -53,7 +53,7 @@ public class Results {
             				   +formData.getFirst("current_town")+"', "
             				   +"NULL, NULL, NULL, NULL, NULL, NULL, "
             				   +"NULL, NULL, NULL, NULL, NULL, NULL,"
-            				   +"NULL, NULL, NULL)", Statement.RETURN_GENERATED_KEYS);
+            				   +"NULL, NULL, NULL, MD5("+formData.getFirst("email")+"))", Statement.RETURN_GENERATED_KEYS);
             ResultSet newID = st.getGeneratedKeys();
             newID.next();
             rs = newID.getInt(1);

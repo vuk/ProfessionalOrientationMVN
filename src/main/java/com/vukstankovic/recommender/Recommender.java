@@ -204,7 +204,17 @@ public class Recommender {
     	}
     	Collections.sort(similarUsers, new UserComparator());
     	Collections.reverse(similarUsers);
-    	similarUsers = (ArrayList<User>) similarUsers.subList(0, 10);
+    	ArrayList<User> helper = similarUsers;
+    	similarUsers = null;
+    	similarUsers = new ArrayList<User>();
+    	Iterator<User> iterator = helper.iterator();
+    	int i = 0;
+    	while(iterator.hasNext()){
+    		if(i < 20){
+    			similarUsers.add(it.next());
+    			i++;
+    		}
+    	}
 	}
 
 }

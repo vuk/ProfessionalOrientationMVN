@@ -204,6 +204,7 @@ public class Recommender {
     	}
     	Collections.sort(similarUsers, new UserComparator());
     	Collections.reverse(similarUsers);
+    	similarUsers = (ArrayList<User>) similarUsers.subList(0, 10);
 	}
 
 }

@@ -203,6 +203,7 @@ public class Recommender {
     	    similarUsers.add(user);
     	}
     	Collections.sort(similarUsers, new UserComparator());
+    	Collections.reverse(similarUsers);
 	}
 
 }

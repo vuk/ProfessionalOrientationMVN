@@ -24,7 +24,14 @@ public class User {
 	private double kultura;
 	private double zdravstvo;
 	private double usluge;
+	private double similarity;
 	
+	public double getSimilarity() {
+		return similarity;
+	}
+	public void setSimilarity(double similarity) {
+		this.similarity = similarity;
+	}
 	public int getId() {
 		return id;
 	}

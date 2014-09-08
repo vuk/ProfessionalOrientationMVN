@@ -10,6 +10,21 @@ public class User {
 	private int yearOfBirth;
 	private int gender;
 	private int currentTown;
+	private double poljoprivreda;
+	private double sumarstvo;
+	private double geodezija;
+	private double masinstvo;
+	private double elektrotehnika;
+	private double hemija;
+	private double tekstil;
+	private double saobracaj;
+	private double trgovinaugostiteljstvo;
+	private double ekonomijapravo;
+	private double hidrometeorologija;
+	private double kultura;
+	private double zdravstvo;
+	private double usluge;
+	
 	public int getId() {
 		return id;
 	}
@@ -64,6 +79,92 @@ public class User {
 	public void setCurrentTown(int currentTown) {
 		this.currentTown = currentTown;
 	}
+	public double getPoljoprivreda() {
+		return poljoprivreda;
+	}
+	public double getSumarstvo() {
+		return sumarstvo;
+	}
+	public double getGeodezija() {
+		return geodezija;
+	}
+	public double getMasinstvo() {
+		return masinstvo;
+	}
+	public double getElektrotehnika() {
+		return elektrotehnika;
+	}
+	public double getHemija() {
+		return hemija;
+	}
+	public double getTekstil() {
+		return tekstil;
+	}
+	public double getSaobracaj() {
+		return saobracaj;
+	}
+	public double getTrgovinaugostiteljstvo() {
+		return trgovinaugostiteljstvo;
+	}
+	public double getEkonomijapravo() {
+		return ekonomijapravo;
+	}
+	public double getHidrometeorologija() {
+		return hidrometeorologija;
+	}
+	public double getKultura() {
+		return kultura;
+	}
+	public double getZdravstvo() {
+		return zdravstvo;
+	}
+	public double getUsluge() {
+		return usluge;
+	}
+	public void setPoljoprivreda(double poljoprivreda) {
+		this.poljoprivreda = poljoprivreda;
+	}
+	public void setSumarstvo(double sumarstvo) {
+		this.sumarstvo = sumarstvo;
+	}
+	public void setGeodezija(double geodezija) {
+		this.geodezija = geodezija;
+	}
+	public void setMasinstvo(double masinstvo) {
+		this.masinstvo = masinstvo;
+	}
+	public void setElektrotehnika(double elektrotehnika) {
+		this.elektrotehnika = elektrotehnika;
+	}
+	public void setHemija(double hemija) {
+		this.hemija = hemija;
+	}
+	public void setTekstil(double tekstil) {
+		this.tekstil = tekstil;
+	}
+	public void setSaobracaj(double saobracaj) {
+		this.saobracaj = saobracaj;
+	}
+	public void setTrgovinaugostiteljstvo(double trgovinaugostiteljstvo) {
+		this.trgovinaugostiteljstvo = trgovinaugostiteljstvo;
+	}
+	public void setEkonomijapravo(double ekonomijapravo) {
+		this.ekonomijapravo = ekonomijapravo;
+	}
+	public void setHidrometeorologija(double hidrometeorologija) {
+		this.hidrometeorologija = hidrometeorologija;
+	}
+	public void setKultura(double kultura) {
+		this.kultura = kultura;
+	}
+	public void setZdravstvo(double zdravstvo) {
+		this.zdravstvo = zdravstvo;
+	}
+	public void setUsluge(double usluge) {
+		this.usluge = usluge;
+	}
+	
+	
 	
 	
 }

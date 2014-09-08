@@ -204,7 +204,7 @@ public class Recommender {
     	}
     	Collections.sort(similarUsers, new UserComparator());
     	Collections.reverse(similarUsers);
-    	ArrayList<User> helper = similarUsers;
+    	/*ArrayList<User> helper = similarUsers;
     	similarUsers = null;
     	similarUsers = new ArrayList<User>();
     	Iterator<User> iterator = helper.iterator();
@@ -214,7 +214,7 @@ public class Recommender {
     			similarUsers.add(it.next());
     			i++;
     		}
-    	}
+    	}*/
 	}
 
 }

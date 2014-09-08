@@ -150,6 +150,9 @@ public class Recommender {
 	
 	public void getCurrentUser(int id){
 		try {
+			Class.forName("com.mysql.jdbc.Driver");
+            con = (Connection) DriverManager.getConnection(db.getUrl(), db.getUser(), db.getPassword());
+            st = (Statement) con.createStatement();
 			rs = st.executeQuery("SELECT * FROM users WHERE id = "+id);
 			rs.next();
 			User u = new User();
@@ -178,7 +181,7 @@ public class Recommender {
         	u.setUsluge(rs.getDouble(23));
         	currentUser = u;
         	
-		} catch (SQLException e) {
+		} catch (SQLException | ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

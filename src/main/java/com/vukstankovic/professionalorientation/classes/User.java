@@ -1,5 +1,14 @@
 package com.vukstankovic.professionalorientation.classes;
 
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.Statement;
+import com.vukstankovic.professionalorientation.config.DBConnect;
+
 public class User {
 	private int id;
 	private String firstName;
@@ -25,7 +34,17 @@ public class User {
 	private double zdravstvo;
 	private double usluge;
 	private double similarity;
+	private ArrayList<Choice> choices; 
 	
+	public ArrayList<Choice> getChoices() {
+		return choices;
+	}
+	public void setChoices(ArrayList<Choice> choices) {
+		this.choices = choices;
+	}
+	public void addChoice(Choice c){
+		this.choices.add(c);
+	}
 	public double getSimilarity() {
 		return similarity;
 	}
@@ -171,7 +190,34 @@ public class User {
 		this.usluge = usluge;
 	}
 	
-	
+	public void getDBChoices(){
+		DBConnect db = new DBConnect();
+		Connection con = null;
+        Statement st = null;
+        ResultSet rs = null;
+        
+        try {
+			Class.forName("com.mysql.jdbc.Driver");
+			con = (Connection) DriverManager.getConnection(db.getUrl(), db.getUser(), db.getPassword());
+	        st = (Statement) con.createStatement();
+	        rs = st.executeQuery("SELECT * FROM choices WHERE user_id = "+getId());
+	        while(rs.next()){
+	        	Choice c = new Choice();
+	        	c.setId(rs.getInt(1));
+	        	c.setUser_id(rs.getInt(2));
+	        	c.setCollege_id(rs.getInt(3));
+	        	c.setMark(rs.getInt(4));
+	        	this.choices.add(c);
+	        }
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        
+	}
 	
 	
 }

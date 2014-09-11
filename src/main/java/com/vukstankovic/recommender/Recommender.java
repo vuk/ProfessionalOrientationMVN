@@ -100,7 +100,7 @@ public class Recommender {
             	u.setId(rs.getInt(1));
             	u.setFirstName(rs.getString(2));
             	u.setLastName(rs.getString(3));
-            	u.setEmail(rs.getString(4));
+            	//u.setEmail(rs.getString(4));
             	u.setSchoolType(rs.getInt(5));
             	u.setHighSchool(rs.getString(6));
             	u.setYearOfBirth(rs.getInt(7));
@@ -159,7 +159,7 @@ public class Recommender {
         	u.setId(rs.getInt(1));
         	u.setFirstName(rs.getString(2));
         	u.setLastName(rs.getString(3));
-        	//u.setEmail(rs.getString(4));
+        	u.setEmail(rs.getString(4));
         	u.setSchoolType(rs.getInt(5));
         	u.setHighSchool(rs.getString(6));
         	u.setYearOfBirth(rs.getInt(7));

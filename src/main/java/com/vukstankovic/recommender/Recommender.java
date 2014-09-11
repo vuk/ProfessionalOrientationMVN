@@ -211,8 +211,9 @@ public class Recommender {
     	Iterator<User> iterator = helper.iterator();
     	int i = 0;
     	while(iterator.hasNext()){
-    		if(i < 20){
-    			similarUsers.add(it.next());
+    		User curr = iterator.next();
+    		if(i < 20 || curr.getSimilarity() >= 0.7){
+    			similarUsers.add(iterator.next());
     			i++;
     		}
     	}

@@ -193,6 +193,7 @@ public class Recommender {
 	
 	public void calculateSimilarity(int id){
 		similarUsers = new ArrayList<User>();
+		ArrayList<User> helper = new ArrayList<User>();
 		getCurrentUser(id);
 		getAllUsers();
 		Iterator<User> it = allUsers.iterator();
@@ -200,13 +201,13 @@ public class Recommender {
     	{
     	    User user = it.next();
     	    user.setSimilarity(sc.similarity(currentUser, user));
-    	    similarUsers.add(user);
+    	    helper.add(user);
     	}
-    	Collections.sort(similarUsers, new UserComparator());
-    	Collections.reverse(similarUsers);
+    	Collections.sort(helper, new UserComparator());
+    	Collections.reverse(helper);
     	/*ArrayList<User> helper = similarUsers;
     	similarUsers = null;
-    	similarUsers = new ArrayList<User>();
+    	similarUsers = new ArrayList<User>(); */
     	Iterator<User> iterator = helper.iterator();
     	int i = 0;
     	while(iterator.hasNext()){
@@ -214,7 +215,7 @@ public class Recommender {
     			similarUsers.add(it.next());
     			i++;
     		}
-    	}*/
+    	}
 	}
 
 }

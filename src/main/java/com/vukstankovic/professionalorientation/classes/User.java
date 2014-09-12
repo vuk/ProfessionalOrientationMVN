@@ -208,7 +208,7 @@ public class User {
 	        	c.setUser_id(rs.getInt(2));
 	        	c.setCollege_id(rs.getInt(3));
 	        	c.setMark(rs.getInt(4));
-	        	this.choices.add(c);
+	        	choices.add(c);
 	        }
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block

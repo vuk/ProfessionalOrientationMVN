@@ -25,6 +25,7 @@ public class Recommendations {
 		Iterator<User> it = users.iterator();
 		while(it.hasNext()){
 			User u = it.next();
+			
 			rc.calcMarkEstimation(u);
 			Iterator<Choice> iterator = u.getChoices().iterator();
 			while(iterator.hasNext()){

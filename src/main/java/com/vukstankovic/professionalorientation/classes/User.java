@@ -37,6 +37,7 @@ public class User {
 	private ArrayList<Choice> choices; 
 	
 	public ArrayList<Choice> getChoices() {
+		getDBChoices();
 		return choices;
 	}
 	public void setChoices(ArrayList<Choice> choices) {

@@ -192,7 +192,7 @@ public class User {
 	}
 	
 	public void getDBChoices(){
-		DBConnect db = new DBConnect();
+		/*DBConnect db = new DBConnect();
 		Connection con = null;
         Statement st = null;
         ResultSet rs = null;
@@ -201,7 +201,7 @@ public class User {
 			Class.forName("com.mysql.jdbc.Driver");
 			con = (Connection) DriverManager.getConnection(db.getUrl(), db.getUser(), db.getPassword());
 	        st = (Statement) con.createStatement();
-	        /*rs = st.executeQuery("SELECT * FROM choices WHERE user_id = "+getId());
+	        rs = st.executeQuery("SELECT * FROM choices WHERE user_id = "+getId());
 	        while(rs.next()){
 	        	Choice c = new Choice();
 	        	c.setId(rs.getInt(1));
@@ -209,7 +209,7 @@ public class User {
 	        	c.setCollege_id(rs.getInt(3));
 	        	c.setMark(rs.getInt(4));
 	        	choices.add(c);
-	        }*/
+	        }
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -217,7 +217,7 @@ public class User {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-        
+        */
 	}
 	
 	

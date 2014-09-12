@@ -10,7 +10,8 @@ public class Recommendations {
 	private ArrayList<Choice> choices;
 	RecommendationCalc rc = new RecommendationCalc();
 	
-	public ArrayList<Choice> getChoices() {
+	public ArrayList<Choice> getChoices(ArrayList<User> users) {
+		generateChoicesList(users);
 		return choices;
 	}
 
@@ -20,6 +21,7 @@ public class Recommendations {
 
 
 	public void generateChoicesList(ArrayList<User> users){
+		choices = new ArrayList<Choice>();
 		Iterator<User> it = users.iterator();
 		while(it.hasNext()){
 			User u = it.next();

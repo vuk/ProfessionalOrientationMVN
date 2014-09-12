@@ -9,7 +9,9 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
 import com.google.gson.Gson;
+import com.vukstankovic.professionalorientation.classes.Choice;
 import com.vukstankovic.professionalorientation.classes.User;
+import com.vukstankovic.recommender.Recommendations;
 import com.vukstankovic.recommender.Recommender;
 
 @Path("recommendation")
@@ -21,7 +23,9 @@ public class RecommenderAPI {
 		Recommender rc = new Recommender();
 		rc.calculateSimilarity(Integer.parseInt(id));
 		ArrayList<User> similarUsers = rc.getSimilarUsers();
-		String json = new Gson().toJson(similarUsers);
+		Recommendations rcm = new Recommendations();
+		ArrayList<Choice> choices = rcm.getChoices(similarUsers);
+		String json = new Gson().toJson(choices);
 		return json;
 	}
 }

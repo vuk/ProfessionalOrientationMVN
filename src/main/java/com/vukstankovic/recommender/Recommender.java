@@ -120,6 +120,7 @@ public class Recommender {
             	u.setKultura(rs.getDouble(21));
             	u.setZdravstvo(rs.getDouble(22));
             	u.setUsluge(rs.getDouble(23));
+            	u.getDBChoices();
             	// don't allow current user in all users list
             	if(currentUser.getId() != u.getId())
             		allUsers.add(u);

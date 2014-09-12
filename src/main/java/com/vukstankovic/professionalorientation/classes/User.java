@@ -192,11 +192,12 @@ public class User {
 	}
 	
 	public void getDBChoices(){
-		/*DBConnect db = new DBConnect();
+		DBConnect db = new DBConnect();
 		Connection con = null;
         Statement st = null;
         ResultSet rs = null;
-        choices = new ArrayList<Choice>();
+        setChoices(new ArrayList<Choice>());;
+        /*
         try {
 			Class.forName("com.mysql.jdbc.Driver");
 			con = (Connection) DriverManager.getConnection(db.getUrl(), db.getUser(), db.getPassword());

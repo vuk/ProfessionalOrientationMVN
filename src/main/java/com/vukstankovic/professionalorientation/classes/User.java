@@ -197,7 +197,6 @@ public class User {
         Statement st = null;
         ResultSet rs = null;
         setChoices(new ArrayList<Choice>());;
-        /*
         try {
 			Class.forName("com.mysql.jdbc.Driver");
 			con = (Connection) DriverManager.getConnection(db.getUrl(), db.getUser(), db.getPassword());
@@ -218,7 +217,7 @@ public class User {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-        */
+        
 	}
 	
 	

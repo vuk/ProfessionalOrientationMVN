@@ -19,13 +19,12 @@ public class Recommendations {
 		this.choices = choices;
 	}
 
-
 	public void generateChoicesList(ArrayList<User> users){
 		choices = new ArrayList<Choice>();
 		Iterator<User> it = users.iterator();
 		while(it.hasNext()){
 			User u = it.next();
-			
+			u.getDBChoices();
 			rc.calcMarkEstimation(u);
 			Iterator<Choice> iterator = u.getChoices().iterator();
 			while(iterator.hasNext()){

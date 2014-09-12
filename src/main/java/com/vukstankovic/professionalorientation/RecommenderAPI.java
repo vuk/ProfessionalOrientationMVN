@@ -23,9 +23,7 @@ public class RecommenderAPI {
 		Recommender rc = new Recommender();
 		rc.calculateSimilarity(Integer.parseInt(id));
 		ArrayList<User> similarUsers = rc.getSimilarUsers();
-		Recommendations rcm = new Recommendations();
-		ArrayList<Choice> choices = rcm.getChoices(similarUsers);
-		String json = new Gson().toJson(choices);
+		String json = new Gson().toJson(similarUsers);
 		return json;
 	}
 }

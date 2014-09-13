@@ -189,6 +189,20 @@ public class Recommender {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		finally {
+	        try {
+	            if (st != null) {
+	                st.close();
+	            }
+	            if (con != null) {
+	                con.close();
+	            }
+	
+	        } catch (SQLException ex) {
+	            Logger lgr = Logger.getLogger(Personalities.class.getName());
+	            lgr.log(Level.WARNING, ex.getMessage(), ex);
+	        }
+	    }
         
 	}
 	
@@ -206,9 +220,7 @@ public class Recommender {
     	}
     	Collections.sort(helper, new UserComparator());
     	Collections.reverse(helper);
-    	/*ArrayList<User> helper = similarUsers;
-    	similarUsers = null;
-    	similarUsers = new ArrayList<User>(); */
+
     	Iterator<User> iterator = helper.iterator();
     	int i = 0;
     	while(iterator.hasNext()){

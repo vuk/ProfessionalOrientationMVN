@@ -196,7 +196,7 @@ public class User {
 		Connection con = null;
         Statement st = null;
         ResultSet rs = null;
-        setChoices(new ArrayList<Choice>());;
+        setChoices(new ArrayList<Choice>());
         try {
 			Class.forName("com.mysql.jdbc.Driver");
 			con = (Connection) DriverManager.getConnection(db.getUrl(), db.getUser(), db.getPassword());

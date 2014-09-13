@@ -9,6 +9,6 @@ public class EstimationComparator implements Comparator<College> {
 	public int compare(College o1, College o2) {
 		Double ponder1 = o1.getMarkEstimation();
 		Double ponder2 = o2.getMarkEstimation();
-		return ponder1.compareTo(ponder2);
+		return ponder2.compareTo(ponder1);
 	}
 }

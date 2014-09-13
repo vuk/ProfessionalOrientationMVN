@@ -56,7 +56,7 @@ public class Recommendations {
 		Iterator<Choice> it = linkedChoices.iterator();
 		Iterator<Choice> helper = linkedChoices.iterator();
 		ArrayList<Integer> usedColleges = new ArrayList<Integer>();
-		while(it.hasNext()){
+		/*while(it.hasNext()){
 			Choice c = it.next();
 			if(usedColleges.contains(c.getCollege_id()))
 				continue;
@@ -70,7 +70,7 @@ public class Recommendations {
 				}
 			}
 			
-		}
+		}*/
 		return null;
 	}
 }

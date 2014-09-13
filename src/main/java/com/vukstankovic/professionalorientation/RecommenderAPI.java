@@ -27,6 +27,7 @@ public class RecommenderAPI {
 		ArrayList<User> similarUsers = rc.getSimilarUsers();
 		ArrayList<Choice> choices = rcm.getChoices(similarUsers);
 		ArrayList<Choice> linkedChoices = rcm.addSimilarityScoresToChoices(choices, similarUsers);
+		ArrayList<College> collegeRecommendations = rcm.collegeEstimation(linkedChoices);
 		String json = new Gson().toJson(linkedChoices);
 		return json;
 	}

@@ -3,6 +3,7 @@ package com.vukstankovic.recommender;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+import com.vukstankovic.professionalorientation.Colleges;
 import com.vukstankovic.professionalorientation.classes.Choice;
 import com.vukstankovic.professionalorientation.classes.College;
 import com.vukstankovic.professionalorientation.classes.User;
@@ -25,7 +26,7 @@ public class Recommendations {
 		Iterator<User> it = users.iterator();
 		while(it.hasNext()){
 			User u = it.next();
-			rc.calcMarkEstimation(u);
+			u.getDBChoices();
 			Iterator<Choice> iterator = u.getChoices().iterator();
 			while(iterator.hasNext()){
 				choices.add(iterator.next());
@@ -49,5 +50,27 @@ public class Recommendations {
 			linkedChoices.add(c);
 		}
 		return linkedChoices;
+	}
+
+	public ArrayList<College> collegeEstimation(ArrayList<Choice> linkedChoices) {
+		Iterator<Choice> it = linkedChoices.iterator();
+		Iterator<Choice> helper = linkedChoices.iterator();
+		ArrayList<Integer> usedColleges = new ArrayList<Integer>();
+		while(it.hasNext()){
+			Choice c = it.next();
+			if(usedColleges.contains(c.getCollege_id()))
+				continue;
+			usedColleges.add(c.getCollege_id());
+			ArrayList<Choice> sublist = new ArrayList<Choice>();
+			sublist.add(c);
+			while(helper.hasNext()){
+				Choice c1 = helper.next();
+				if(c.getCollege_id() == c1.getCollege_id()){
+					sublist.add(c1);
+				}
+			}
+			
+		}
+		return null;
 	}
 }

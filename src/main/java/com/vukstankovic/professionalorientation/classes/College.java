@@ -10,11 +10,20 @@ public class College {
 	private String interest;
 	private int ponder;
 	private int priority;
+	private double markEstimation;
 	
 	public College(){
 		
 	}
 	
+	public double getMarkEstimation() {
+		return markEstimation;
+	}
+
+	public void setMarkEstimation(double markEstimation) {
+		this.markEstimation = markEstimation;
+	}
+
 	public int getId() {
 		return id;
 	}

@@ -210,6 +210,7 @@ public class Recommender {
 		similarUsers = new ArrayList<User>();
 		ArrayList<User> helper = new ArrayList<User>();
 		getCurrentUser(id);
+		currentUser.getDBChoices();
 		getAllUsers();
 		Iterator<User> it = allUsers.iterator();
     	while(it.hasNext())

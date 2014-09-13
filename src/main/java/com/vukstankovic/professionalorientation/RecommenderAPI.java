@@ -22,7 +22,7 @@ public class RecommenderAPI {
     @Produces(MediaType.APPLICATION_JSON + "; charset=UTF-8")
 	public String getSimilar(@QueryParam("id") String id){
 		Recommender rc = new Recommender();
-		Recommendations rcm = new Recommendations();
+		//Recommendations rcm = new Recommendations();
 		rc.calculateSimilarity(Integer.parseInt(id));
 		ArrayList<User> similarUsers = rc.getSimilarUsers();
 		//ArrayList<Choice> choices = rcm.getChoices(similarUsers);

@@ -199,8 +199,8 @@ public class User {
         setChoices(new ArrayList<Choice>());
         try {
 			Class.forName("com.mysql.jdbc.Driver");
-			/*con = (Connection) DriverManager.getConnection(db.getUrl(), db.getUser(), db.getPassword());
-	        st = (Statement) con.createStatement();
+			con = (Connection) DriverManager.getConnection(db.getUrl(), db.getUser(), db.getPassword());
+			/*st = (Statement) con.createStatement();
 	        rs = st.executeQuery("SELECT * FROM choices WHERE user_id = "+getId());
 	        while(rs.next()){
 	        	Choice c = new Choice();
@@ -211,6 +211,9 @@ public class User {
 	        	choices.add(c);
 	        }*/
 		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

@@ -33,13 +33,13 @@ public class Recommendations {
 		}
 	}
 
-	public ArrayList<Choice> addSimilarityScoresToChoices(ArrayList<Choice> choices2,
+	public ArrayList<Choice> addSimilarityScoresToChoices(ArrayList<Choice> choices,
 			ArrayList<User> similarUsers) {
-		Iterator<Choice> itc = choices2.iterator();
-		Iterator<User> itu = similarUsers.iterator();
+		Iterator<Choice> itc = choices.iterator();
 		ArrayList<Choice> linkedChoices = new ArrayList<Choice>();
 		while(itc.hasNext()){
 			Choice c = itc.next();
+			Iterator<User> itu = similarUsers.iterator();
 			while(itu.hasNext()){
 				User u = itu.next();
 				if(c.getUser_id() == u.getId()){

@@ -26,7 +26,9 @@ public class RecommendationCalc {
 		Iterator<Choice> it = choices.iterator();
 		Choice ch = it.next();
 		double mark = numerator(choices)/denominator(choices);
-		College c = getCollegeByID(ch.getCollege_id());
+		//College c = getCollegeByID(ch.getCollege_id());
+		College c = new College();
+		c.setId(ch.getCollege_id());
 		c.setMarkEstimation(mark);
 		return c;
 	}

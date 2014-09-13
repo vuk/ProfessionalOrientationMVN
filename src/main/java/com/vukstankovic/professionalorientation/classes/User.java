@@ -4,9 +4,12 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.Statement;
+import com.vukstankovic.professionalorientation.Personalities;
 import com.vukstankovic.professionalorientation.config.DBConnect;
 
 public class User {
@@ -223,6 +226,20 @@ public class User {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+        finally {
+	        try {
+	            if (st != null) {
+	                st.close();
+	            }
+	            if (con != null) {
+	                con.close();
+	            }
+	
+	        } catch (SQLException ex) {
+	            Logger lgr = Logger.getLogger(Personalities.class.getName());
+	            lgr.log(Level.WARNING, ex.getMessage(), ex);
+	        }
+	    }
         
 	}
 	

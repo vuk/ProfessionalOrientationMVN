@@ -22,6 +22,6 @@ public class RecommendationCalc {
 	}
 	
 	public double denominator(Choice c, User u){
-		return 0;
+		return 1;
 	}
 }

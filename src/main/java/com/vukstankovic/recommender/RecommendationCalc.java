@@ -40,7 +40,7 @@ public class RecommendationCalc {
 	}
 	
 	public College getCollegeByID(int id){
-		try {
+		/*try {
 			Class.forName("com.mysql.jdbc.Driver");
             con = (Connection) DriverManager.getConnection(db.getUrl(), db.getUser(), db.getPassword());
             st = (Statement) con.createStatement();
@@ -78,7 +78,7 @@ public class RecommendationCalc {
 	            Logger lgr = Logger.getLogger(Personalities.class.getName());
 	            lgr.log(Level.WARNING, ex.getMessage(), ex);
 	        }
-	    }
+	    }*/
 		return new College();
         
 	}

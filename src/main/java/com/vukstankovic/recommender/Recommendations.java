@@ -55,7 +55,9 @@ public class Recommendations {
 		Iterator<Choice> it = linkedChoices.iterator();
 		Iterator<Choice> helper = linkedChoices.iterator();
 		ArrayList<Integer> usedColleges = new ArrayList<Integer>();
-		/*while(it.hasNext()){
+		ArrayList<College> colleges = new ArrayList<College>();
+		RecommendationCalc rcc = new RecommendationCalc();
+		while(it.hasNext()){
 			Choice c = it.next();
 			if(usedColleges.contains(c.getCollege_id()))
 				continue;
@@ -68,8 +70,9 @@ public class Recommendations {
 					sublist.add(c1);
 				}
 			}
+			colleges.add(rcc.calcMarkEstimation(sublist));
 			
-		}*/
-		return null;
+		}
+		return colleges;
 	}
 }

@@ -125,7 +125,7 @@ public class Recommender {
             	if(currentUser.getId() != u.getId())
             		allUsers.add(u);
             }
-            
+            rs.close();
 
         } catch (SQLException ex) {
         	Logger lgr = Logger.getLogger(Personalities.class.getName());
@@ -181,6 +181,7 @@ public class Recommender {
         	u.setZdravstvo(rs.getDouble(22));
         	u.setUsluge(rs.getDouble(23));
         	currentUser = u;
+        	rs.close();
         	
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -226,6 +227,7 @@ public class Recommender {
     	while(iterator.hasNext()){
     		User curr = iterator.next();
     		if(i < 20 || curr.getSimilarity() >= 0.7){
+    			curr.getDBChoices();
     			similarUsers.add(curr);
     			i++;
     		}

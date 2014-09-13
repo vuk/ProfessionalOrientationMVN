@@ -25,10 +25,10 @@ public class RecommenderAPI {
 		Recommendations rcm = new Recommendations();
 		rc.calculateSimilarity(Integer.parseInt(id));
 		ArrayList<User> similarUsers = rc.getSimilarUsers();
-		ArrayList<Choice> choices = rcm.getChoices(similarUsers);
+		//ArrayList<Choice> choices = rcm.getChoices(similarUsers);
 		//ArrayList<Choice> linkedChoices = rcm.addSimilarityScoresToChoices(choices, similarUsers);
 		//ArrayList<College> collegeRecommendations = rcm.collegeEstimation(linkedChoices);
-		String json = new Gson().toJson(choices);
+		String json = new Gson().toJson(similarUsers);
 		return json;
 	}
 }

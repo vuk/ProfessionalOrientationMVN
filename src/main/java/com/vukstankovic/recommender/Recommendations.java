@@ -26,7 +26,6 @@ public class Recommendations {
 		Iterator<User> it = users.iterator();
 		while(it.hasNext()){
 			User u = it.next();
-			u.getDBChoices();
 			Iterator<Choice> iterator = u.getChoices().iterator();
 			while(iterator.hasNext()){
 				choices.add(iterator.next());

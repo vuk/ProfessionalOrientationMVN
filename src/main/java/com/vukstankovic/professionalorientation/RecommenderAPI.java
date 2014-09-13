@@ -1,6 +1,7 @@
 package com.vukstankovic.professionalorientation;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -12,6 +13,7 @@ import com.google.gson.Gson;
 import com.vukstankovic.professionalorientation.classes.Choice;
 import com.vukstankovic.professionalorientation.classes.College;
 import com.vukstankovic.professionalorientation.classes.User;
+import com.vukstankovic.professionalorientation.helpers.EstimationComparator;
 import com.vukstankovic.recommender.Recommendations;
 import com.vukstankovic.recommender.Recommender;
 
@@ -28,6 +30,7 @@ public class RecommenderAPI {
 		ArrayList<Choice> choices = rcm.getChoices(similarUsers);
 		ArrayList<Choice> linkedChoices = rcm.addSimilarityScoresToChoices(choices, similarUsers);
 		ArrayList<College> collegeRecommendations = rcm.collegeEstimation(linkedChoices);
+		Collections.sort(collegeRecommendations, new EstimationComparator());
 		String json = new Gson().toJson(collegeRecommendations);
 		return json;
 	}

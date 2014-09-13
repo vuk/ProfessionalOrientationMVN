@@ -93,7 +93,7 @@ public class Recommender {
         	Class.forName("com.mysql.jdbc.Driver");
         	con = (Connection) DriverManager.getConnection(db.getUrl(), db.getUser(), db.getPassword());
             st = (Statement) con.createStatement();
-            rs = st.executeQuery("SELECT * FROM users WHERE poljoprivreda != 'NULL'");
+            rs = st.executeQuery("SELECT * FROM users WHERE poljoprivreda != 'NULL' ORDER BY id DESC LIMIT 200");
             
             while (rs.next()) {
             	User u = new User();

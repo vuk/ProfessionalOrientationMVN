@@ -6,7 +6,14 @@ public class Choice {
 	private int college_id;
 	private int mark;
 	private double markEstimation;
+	private double similarityScore;
 	
+	public double getSimilarityScore() {
+		return similarityScore;
+	}
+	public void setSimilarityScore(double similarityScore) {
+		this.similarityScore = similarityScore;
+	}
 	public double getMarkEstimation() {
 		return markEstimation;
 	}

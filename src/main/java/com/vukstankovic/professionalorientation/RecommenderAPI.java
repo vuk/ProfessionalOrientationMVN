@@ -10,6 +10,7 @@ import javax.ws.rs.core.MediaType;
 
 import com.google.gson.Gson;
 import com.vukstankovic.professionalorientation.classes.Choice;
+import com.vukstankovic.professionalorientation.classes.College;
 import com.vukstankovic.professionalorientation.classes.User;
 import com.vukstankovic.recommender.Recommendations;
 import com.vukstankovic.recommender.Recommender;
@@ -25,7 +26,8 @@ public class RecommenderAPI {
 		rc.calculateSimilarity(Integer.parseInt(id));
 		ArrayList<User> similarUsers = rc.getSimilarUsers();
 		ArrayList<Choice> choices = rcm.getChoices(similarUsers);
-		String json = new Gson().toJson(choices);
+		ArrayList<Choice> linkedChoices = rcm.addSimilarityScoresToChoices(choices, similarUsers);
+		String json = new Gson().toJson(linkedChoices);
 		return json;
 	}
 }

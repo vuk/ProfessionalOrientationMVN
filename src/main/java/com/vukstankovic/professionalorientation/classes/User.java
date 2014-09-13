@@ -35,7 +35,14 @@ public class User {
 	private double usluge;
 	private double similarity;
 	private ArrayList<Choice> choices; 
+	private Choice currentChoice;
 	
+	public Choice getCurrentChoice() {
+		return currentChoice;
+	}
+	public void setCurrentChoice(Choice currentChoice) {
+		this.currentChoice = currentChoice;
+	}
 	public ArrayList<Choice> getChoices() {
 		return choices;
 	}

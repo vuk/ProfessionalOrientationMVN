@@ -225,7 +225,7 @@ public class Recommender {
     	int i = 0;
     	while(iterator.hasNext()){
     		User curr = iterator.next();
-    		if(i < 20 || curr.getSimilarity() >= 0.7){
+    		if(i < 15 && curr.getSimilarity() >= 0.7){
     			curr.getDBChoices();
     			similarUsers.add(curr);
     			i++;

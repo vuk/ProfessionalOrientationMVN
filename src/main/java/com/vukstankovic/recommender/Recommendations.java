@@ -71,7 +71,7 @@ public class Recommendations {
 				}
 			}
 			colleges.add(rcc.calcMarkEstimation(sublist));
-			
+			break;
 		}
 		return colleges;
 	}

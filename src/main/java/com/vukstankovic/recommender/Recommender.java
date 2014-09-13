@@ -120,7 +120,6 @@ public class Recommender {
             	u.setKultura(rs.getDouble(21));
             	u.setZdravstvo(rs.getDouble(22));
             	u.setUsluge(rs.getDouble(23));
-            	u.getDBChoices();
             	// don't allow current user in all users list
             	if(currentUser.getId() != u.getId())
             		allUsers.add(u);
@@ -226,6 +225,7 @@ public class Recommender {
     	int i = 0;
     	while(iterator.hasNext()){
     		User curr = iterator.next();
+    		curr.getDBChoices();
     		if(i < 20 || curr.getSimilarity() >= 0.7){
     			similarUsers.add(curr);
     			i++;

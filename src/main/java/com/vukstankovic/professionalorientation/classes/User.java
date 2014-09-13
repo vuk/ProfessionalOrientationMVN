@@ -191,7 +191,7 @@ public class User {
 	}
 	
 	public void getDBChoices(){
-/*		DBConnect db = new DBConnect();
+		DBConnect db = new DBConnect();
 		Connection con = null;
         Statement st = null;
         ResultSet rs = null;
@@ -215,7 +215,7 @@ public class User {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}*/
+		}
         
 	}
 	

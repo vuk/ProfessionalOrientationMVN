@@ -32,11 +32,23 @@ public class RecommendationCalc {
 	}
 	
 	public double numerator(ArrayList<Choice> choices){
-		return 0;
+		Iterator<Choice> it = choices.iterator();
+		double numerator = 0;
+		while (it.hasNext()) {
+			Choice c = it.next();
+			numerator += c.getSimilarityScore()*c.getMark();
+		}
+		return numerator;
 	}
 	
 	public double denominator(ArrayList<Choice> choices){
-		return 1;
+		Iterator<Choice> it = choices.iterator();
+		double denominator = 0;
+		while(it.hasNext()){
+			Choice c = it.next();
+			denominator += Math.abs(c.getSimilarityScore());
+		}
+		return denominator;
 	}
 	
 	public College getCollegeByID(int id){

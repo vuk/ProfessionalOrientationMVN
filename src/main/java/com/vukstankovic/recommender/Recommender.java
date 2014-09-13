@@ -210,7 +210,6 @@ public class Recommender {
 		similarUsers = new ArrayList<User>();
 		ArrayList<User> helper = new ArrayList<User>();
 		getCurrentUser(id);
-		currentUser.getDBChoices();
 		getAllUsers();
 		Iterator<User> it = allUsers.iterator();
     	while(it.hasNext())
@@ -226,8 +225,8 @@ public class Recommender {
     	int i = 0;
     	while(iterator.hasNext()){
     		User curr = iterator.next();
-    		//curr.getDBChoices();
     		if(i < 20 || curr.getSimilarity() >= 0.7){
+    			curr.getDBChoices();
     			similarUsers.add(curr);
     			i++;
     		}

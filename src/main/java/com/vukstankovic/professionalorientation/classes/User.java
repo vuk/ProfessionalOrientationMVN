@@ -192,14 +192,14 @@ public class User {
 	}
 	
 	public void getDBChoices(){
-		DBConnect db = new DBConnect();
-		Connection con = null;
-        Statement st = null;
-        ResultSet rs = null;
+		DBConnect db2 = new DBConnect();
+		Connection con2 = null;
+        Statement st2 = null;
+        ResultSet rs2 = null;
         setChoices(new ArrayList<Choice>());
         try {
 			Class.forName("com.mysql.jdbc.Driver");
-			con = (Connection) DriverManager.getConnection(db.getUrl(), db.getUser(), db.getPassword());
+			con2 = (Connection) DriverManager.getConnection(db2.getUrl(), db2.getUser(), db2.getPassword());
 			/*st = (Statement) con.createStatement();
 	        rs = st.executeQuery("SELECT * FROM choices WHERE user_id = "+getId());
 	        while(rs.next()){

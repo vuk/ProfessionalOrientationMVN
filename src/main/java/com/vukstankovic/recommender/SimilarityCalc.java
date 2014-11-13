@@ -3,7 +3,7 @@ package com.vukstankovic.recommender;
 import com.vukstankovic.professionalorientation.classes.User;
 
 public class SimilarityCalc {
-	
+	 
 	public double average(User u){
 		return (u.getPoljoprivreda()+
 				u.getSumarstvo()+
